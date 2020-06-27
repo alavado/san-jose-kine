@@ -3,6 +3,7 @@ import { useQuery } from '@apollo/react-hooks'
 import { gql } from 'apollo-boost'
 import './ListaPacientes.css'
 import Buscador from './Buscador'
+import { NavLink } from 'react-router-dom'
 
 const queryPacientes = gql`
   {
@@ -25,8 +26,10 @@ const ListaPacientes = () => {
     <div className="ListaPacientes">
       <Buscador />
       {data.pacientes.map(paciente => (
-        <div
+        <NavLink
+          to={`/intranet/paciente/${paciente.id}`}
           className="ListaPacientes__paciente"
+          activeClassName="ListaPacientes__paciente--activo"
           key={paciente.id}
         >
           <div className="ListaPacientes__avatar">
@@ -40,7 +43,7 @@ const ListaPacientes = () => {
               Última llamada: 16 de mayo
             </div>
           </div>
-        </div>
+        </NavLink>
       ))}
     </div>
   )

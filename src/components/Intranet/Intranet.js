@@ -1,12 +1,24 @@
 import React from 'react'
 import Rombos from '../Landing/Rombos'
-import './Intranet.css'
 import Lateral from './Lateral'
 import { Switch, Route, useHistory, Redirect } from 'react-router'
 import Inicio from './Inicio'
 import Pacientes from './Pacientes'
 import { useDispatch, useSelector } from 'react-redux'
 import { cierraLaSesion } from '../../redux/ducks/jwt'
+import { useQuery } from '@apollo/react-hooks'
+import gql from 'graphql-tag'
+import './Intranet.css'
+
+const queryUsuario = gql`
+  {
+    user(id: "5ef6a15a8415d0655bd8b2e1") {
+      id
+      username
+      nombre
+    }
+  }
+`
 
 const Intranet = () => {
 
@@ -48,6 +60,7 @@ const Intranet = () => {
           <Switch>
             <Route path="/intranet/inicio" component={Inicio} />
             <Route path="/intranet/pacientes" component={Pacientes} />
+            <Route path="/intranet/paciente/:id" component={Pacientes} />
           </Switch>
         </div>
       </div>

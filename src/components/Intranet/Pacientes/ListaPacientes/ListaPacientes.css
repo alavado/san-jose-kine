@@ -8,13 +8,22 @@
 .ListaPacientes__paciente {
   display: flex;
   align-items: center;
+  cursor: pointer;
+}
+
+.ListaPacientes__paciente:hover {
+  background-color: #f5f5f5;
+}
+
+.ListaPacientes__paciente--activo {
+  background-color: #EEEEEE;
 }
 
 .ListaPacientes__avatar {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #9E9E9E;
+  background-color: #FAB53E;
   height: 2.25em;
   width: 2.25em;
   border-radius: 100%;
@@ -26,13 +35,14 @@
 .ListaPacientes__datos {
   display: flex;
   flex-direction: column;
-  padding: 1.25em .5em 1.25em 0;
+  padding: 1em .5em 1em 0;
   border-bottom: 1px solid #F5F5F5;
   flex: 1;
 }
 
 .ListaPacientes__nombre_paciente {
   font-weight: 500;
+  font-size: .95em;
   margin-bottom: .35em;
 }
 
