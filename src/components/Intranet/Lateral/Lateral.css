@@ -1,6 +1,5 @@
 .Lateral {
   background-color: #0564d1;
-  width: 12em;
   animation: Lateral-aparece .5s ease-in-out .5s both;
 }
 
@@ -22,16 +21,24 @@
 .Lateral__link {
   text-decoration: none;
   color: rgba(255, 255, 255, .6);
-  font-size: .8em;
   font-weight: 600;
-  padding: 1.25em .25em;
+  padding: 1em .65em;
   transition: all .15s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .Lateral__link--activo {
   color: rgba(255, 255, 255, .95);
+  background-color: rgba(255, 255, 255, .2);
 }
 
 .Lateral__icono_link {
-  width: 3.25em;
+  font-size: 1.35em;
+  margin-bottom: .25em;
+}
+
+.Lateral__texto_link {
+  font-size: .65em;
 }

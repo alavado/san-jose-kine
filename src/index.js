@@ -16,7 +16,7 @@ const getToken = () => {
 }
 
 const client = new ApolloClient({
-  uri: 'http://compsci.cl:1196/graphql',
+  uri: 'https://compsci.cl/san-jose/graphql',
   request: operation => {
     const token = getToken()
     if (token) {

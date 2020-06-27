@@ -1,7 +1,5 @@
 import React from 'react'
 import Rombos from '../Landing/Rombos'
-import { InlineIcon } from '@iconify/react'
-import personCheckFill from '@iconify/icons-bi/person-check-fill'
 import './Intranet.css'
 import Lateral from './Lateral'
 import { Switch, Route, useHistory, Redirect } from 'react-router'
@@ -17,7 +15,7 @@ const Intranet = () => {
   const { token } = useSelector(state => state.jwt)
 
   if (!token) {
-    return <Redirect path="/" />
+    // return <Redirect path="/" />
   }
 
   const cerrarSesion = () => {
@@ -34,7 +32,6 @@ const Intranet = () => {
             className="Intranet__logo_nombre"
             onClick={() => history.push('/intranet/inicio')}
           >
-            <InlineIcon className="Intranet__logo_icono" icon={personCheckFill} /> 
             Seguimiento San José - UChile <span className="Intranet__nombre_centro">Administración</span>
           </div>
         </div>

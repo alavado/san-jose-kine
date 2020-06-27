@@ -8,7 +8,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: .5em 1em;
+  padding: .9em 1em;
   animation: Intranet__barra-aparece .5s ease-in-out .5s both;
   box-shadow: 0em .05em .25em rgba(0, 0, 0, 0.1);
   background-image: linear-gradient(45deg, rgba(47, 141, 251, 0.92) 0%, #2FF2DA 100%);
@@ -28,7 +28,7 @@
 }
 
 .Intranet__logo_icono {
-  margin-right: .25em;
+  margin-right: .5em;
 }
 
 .Intranet__logo_nombre {

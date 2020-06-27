@@ -33,7 +33,7 @@ const Login = () => {
       .then(res => {
         const token = res.data.login.jwt
         dispatch(recibiToken(token))
-        history.push('/intranet')
+        history.push('/intranet/inicio')
       })
       .catch(console.error)
   }
