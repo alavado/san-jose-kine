@@ -1,0 +1,75 @@
+.Intranet {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.Intranet__barra {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: .5em 1em;
+  animation: Intranet__barra-aparece .5s ease-in-out .5s both;
+  box-shadow: 0em .05em .25em rgba(0, 0, 0, 0.1);
+  background-image: linear-gradient(45deg, rgba(47, 141, 251, 0.92) 0%, #2FF2DA 100%);
+}
+
+@keyframes Intranet__barra-aparece {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(0%);
+  }
+}
+
+.Intranet__logo {
+  cursor: pointer;
+}
+
+.Intranet__logo_icono {
+  margin-right: .25em;
+}
+
+.Intranet__logo_nombre {
+  font-weight: bold;
+  color: white;
+  display: flex;
+  align-items: center;
+}
+
+.Intranet__nombre_centro {
+  font-weight: 500;
+  padding-left: .75em;
+  margin-left: .75em;
+  font-size: .8em;
+  border-left: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.Intranet__barra_usuario {
+  color: white;
+  font-weight: 500;
+  font-size: .8em;
+  text-shadow: 0em .05em .5em rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+}
+
+.Intranet__contenido {
+  display: flex;
+  flex: 1;
+}
+
+.Intranet__principal {
+  flex: 1;
+  display: flex;
+  animation: Intranet__principal-aparece .5s ease-in-out .5s both;
+}
+
+@keyframes Intranet__principal-aparece {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}

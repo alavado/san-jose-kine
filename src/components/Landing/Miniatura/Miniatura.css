@@ -1,0 +1,59 @@
+.Miniatura {
+  background-color: white;
+  color: rgba(0, 0, 0, .75);
+  height: 500px;
+  width: 410px;
+  border-radius: 1.5em;
+  box-shadow: 0 .15em 1em rgba(0, 0, 0, .1);
+  display: flex;
+  flex-direction: column;
+}
+
+.Miniatura__barra {
+  border-bottom: 1px solid rgba(0, 0, 0, .1);
+  min-height: 3em;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+}
+
+.Miniatura__botones {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 1em;
+}
+
+.Miniatura__boton {
+  width: .6em;
+  height: .6em;
+  border-radius: 100%;
+  margin-right: .4em;
+  border: 1px solid rgba(0, 0, 0, .1);
+}
+
+.Miniatura__boton:first-child {
+  background-color: #e75f5f;
+}
+
+.Miniatura__boton:nth-child(2) {
+  background-color: #ebda7a;
+}
+
+.Miniatura__boton:nth-child(3) {
+  background-color: #56e133;
+}
+
+.Miniatura__titulo {
+  font-weight: 600;
+  font-size: .9em;
+  display: flex;
+  flex: 1;
+}
+
+.Miniatura__cuerpo {
+  overflow-y: auto;
+  overflow-x: hidden;
+  flex: 1;
+}

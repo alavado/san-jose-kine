@@ -1,0 +1,62 @@
+.Rombos {
+  position: absolute;
+  width: 100%;
+  height: 150vh;
+  overflow: hidden;
+  z-index: -1;
+}
+
+.Rombos--desaparecen {
+  height: 100vh;
+}
+
+.Rombos__rombo1 {
+  position: absolute;
+  background: linear-gradient(125deg, #2FF294 25%, rgba(47, 129, 251, 0.92) 100%);
+  height: 100vw;
+  width: 100vw;
+  transform: translateX(-30vw) translateY(-55vw) rotateZ(55deg);
+  border-radius: 25%;
+  z-index: -1;
+}
+
+.Rombos--desaparecen .Rombos__rombo1 {
+  animation: Rombo1-desaparece 1s ease-in-out both;
+}
+
+.Rombos__rombo2 {
+  position: absolute;
+  background: linear-gradient(120deg, rgba(47, 141, 251, 0.92) 49.04%, #2FF2DA 90%);
+  height: 100vw;
+  width: 100vw;
+  opacity: 1;
+  transform: translateX(50vw) translateY(-55vw) rotateZ(40deg);
+  border-radius: 25%;
+  z-index: -2;
+}
+
+.Rombos--desaparecen .Rombos__rombo2 {
+  animation: Rombo2-desaparece 1s ease-in-out both;
+}
+
+@keyframes Rombo1-desaparece {
+  0% {
+    transform: translateX(-30vw) translateY(-55vw) rotateZ(55deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(-50vw) translateY(-55vw) rotateZ(40deg);
+    opacity: 0;
+  }
+}
+
+@keyframes Rombo2-desaparece {
+  0% {
+    transform: translateX(50vw) translateY(-55vw) rotateZ(40deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(70vw) translateY(-55vw) rotateZ(55deg);
+    opacity: 0;
+  }
+}

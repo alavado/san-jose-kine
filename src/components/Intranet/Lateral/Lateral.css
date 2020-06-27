@@ -1,0 +1,37 @@
+.Lateral {
+  background-color: #0564d1;
+  width: 12em;
+  animation: Lateral-aparece .5s ease-in-out .5s both;
+}
+
+@keyframes Lateral-aparece {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+.Lateral__links {
+  display: flex;
+  flex-direction: column;
+  margin-top: 1em;
+}
+
+.Lateral__link {
+  text-decoration: none;
+  color: rgba(255, 255, 255, .6);
+  font-size: .8em;
+  font-weight: 600;
+  padding: 1.25em .25em;
+  transition: all .15s ease-in-out;
+}
+
+.Lateral__link--activo {
+  color: rgba(255, 255, 255, .95);
+}
+
+.Lateral__icono_link {
+  width: 3.25em;
+}

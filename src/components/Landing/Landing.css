@@ -1,0 +1,45 @@
+.Landing {
+  display: flex;
+  justify-content: center;
+  flex: 1;
+  color: white;
+}
+
+.Landing__contenedor {
+  max-width: 1024px;
+  flex: 1;
+}
+
+.Landing__principal {
+  min-height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-left: 1em;
+}
+
+.Landing__titulo {
+  font-size: 1.75em;
+  font-weight: 600;
+  line-height: 1.5;
+  margin-top: -3em;
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+}
+
+.Landing__cta {
+  cursor: pointer;
+  align-self: flex-start;
+  margin-top: 1.5em;
+  padding: 1em 3em;
+  border-radius: 2em;
+  font-weight: bold;
+  font-size: .5em;
+  background-color: #1781FF;
+  color: white;
+}
+
+.Landing__cta:hover {
+  filter: brightness(115%);
+}
