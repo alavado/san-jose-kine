@@ -15,7 +15,7 @@ const Miniatura = () => {
         <div className="Miniatura__titulo">Seguimiento San José - UChile</div>
       </div>
       <div className="Miniatura__cuerpo">
-        <MiniaturaListaPacientes />
+        {/* <MiniaturaListaPacientes /> */}
       </div>
     </div>
   )

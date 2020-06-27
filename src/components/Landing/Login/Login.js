@@ -1,13 +1,42 @@
 import React from 'react'
 import './Login.css'
 import { useHistory } from 'react-router'
+import gql from 'graphql-tag';
+import { useMutation } from '@apollo/react-hooks';
+import { useDispatch } from 'react-redux';
+import { recibiToken } from '../../../redux/ducks/jwt';
+
+const mutationLogin = gql`
+  mutation Login($identifier: String!, $password: String!) {
+    login(input: {
+      identifier: $identifier,
+      password: $password
+    }) {
+      jwt
+    }
+  }
+`;
 
 const Login = () => {
 
   const history = useHistory()
+  const [login, { data }] = useMutation(mutationLogin);
+  const dispatch = useDispatch()
 
-  const login = e => {
+  const enviarFormulario = e => {
     e.preventDefault()
+    login({
+      variables: {
+        identifier: 'ale615',
+        password: 'asd123'
+      }
+    })
+      .then(res => {
+        const token = res.data.login.jwt
+        dispatch(recibiToken(token))
+        history.push('/intranet')
+      })
+      .catch(console.error)
   }
 
   return (
@@ -27,7 +56,7 @@ const Login = () => {
             <button
               className="Login__boton"
               type="submit"
-              onClick={() => history.push('/intranet')}
+              onClick={enviarFormulario}
             >
               Ingresar
             </button>
