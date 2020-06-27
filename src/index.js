@@ -18,7 +18,7 @@ const getToken = () => {
 const client = new ApolloClient({
   uri: 'https://compsci.cl/san-jose/graphql',
   request: operation => {
-    const token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVlZjZhMTVhODQxNWQwNjU1YmQ4YjJlMSIsImlhdCI6MTU5MzI4Mjk3NywiZXhwIjoxNTk1ODc0OTc3fQ.clIZdL-8i5mtp1QzkcovfUIn0Rl_iPkxpDT9XtILWC0'//getToken()
+    const token = getToken()
     if (token) {
       operation.setContext({
         headers: {

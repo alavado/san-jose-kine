@@ -7,14 +7,13 @@ import Pacientes from './Pacientes'
 import { useDispatch, useSelector } from 'react-redux'
 import { cierraLaSesion } from '../../redux/ducks/jwt'
 import { useQuery } from '@apollo/react-hooks'
+import { decode } from 'jsonwebtoken'
 import gql from 'graphql-tag'
 import './Intranet.css'
 
 const queryUsuario = gql`
-  {
-    user(id: "5ef6a15a8415d0655bd8b2e1") {
-      id
-      username
+  query Usuario($id: ID!) {
+    user(id: $id) {
       nombre
     }
   }
@@ -25,10 +24,14 @@ const Intranet = () => {
   const history = useHistory()
   const dispatch = useDispatch()
   const { token } = useSelector(state => state.jwt)
+  
+  const { data } = useQuery(queryUsuario, {
+    variables: { id: decode(token).id }
+  })
 
-  if (!token) {
-    // return <Redirect path="/" />
-  }
+  // if (!token) {
+  //   return <Redirect path="/login" />
+  // }
 
   const cerrarSesion = () => {
     dispatch(cierraLaSesion())
@@ -47,11 +50,16 @@ const Intranet = () => {
             Seguimiento San José - UChile <span className="Intranet__nombre_centro">Administración</span>
           </div>
         </div>
-        <div
-          className="Intranet__barra_usuario"
-          onClick={cerrarSesion}
-        >
-          Cerrar sesión
+        <div className="Intranet__barra_usuario">
+          <div className="Intranet__nombre_usuario">
+            {data && data.user.nombre}
+          </div>
+          <div
+            className="Intranet__cerrar_sesion"
+            onClick={cerrarSesion}
+          >
+            Cerrar sesión
+          </div>
         </div>
       </div>
       <div className="Intranet__contenido">

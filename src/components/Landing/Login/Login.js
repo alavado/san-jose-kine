@@ -1,10 +1,10 @@
 import React, { useState } from 'react'
 import './Login.css'
 import { useHistory } from 'react-router'
-import gql from 'graphql-tag';
-import { useMutation } from '@apollo/react-hooks';
-import { useDispatch } from 'react-redux';
-import { recibiToken } from '../../../redux/ducks/jwt';
+import gql from 'graphql-tag'
+import { useMutation } from '@apollo/react-hooks'
+import { useDispatch } from 'react-redux'
+import { tomaEsteToken } from '../../../redux/ducks/jwt'
 
 const mutationLogin = gql`
   mutation Login($identifier: String!, $password: String!) {
@@ -15,12 +15,12 @@ const mutationLogin = gql`
       jwt
     }
   }
-`;
+`
 
 const Login = () => {
 
   const history = useHistory()
-  const [login, { error }] = useMutation(mutationLogin);
+  const [login, { error }] = useMutation(mutationLogin)
   const [variables, setVariables] = useState({
     identifier: '',
     password: ''
@@ -32,7 +32,7 @@ const Login = () => {
     login({ variables })
       .then(res => {
         const token = res.data.login.jwt
-        dispatch(recibiToken(token))
+        dispatch(tomaEsteToken(token))
         history.push('/intranet/inicio')
       })
       .catch(console.error)
