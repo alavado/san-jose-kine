@@ -1,0 +1,19 @@
+.Buscador {
+  padding: .75em 1em;
+  border-bottom: 1px solid #EEEEEE;
+  display: flex;
+  align-items: center;
+}
+
+.Buscador__icono {
+  margin-right: 1.5em;
+  color: #9E9E9E;
+  font-size: .7em;
+}
+
+.Buscador__input {
+  border: none;
+  outline: none;
+  font-size: .7em;
+  flex: 1;
+}

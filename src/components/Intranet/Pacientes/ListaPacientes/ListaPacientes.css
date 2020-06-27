@@ -1,0 +1,42 @@
+.ListaPacientes {
+  border-right: 1px solid #F5F5F5;
+  min-width: 18em;
+  display: flex;
+  flex-direction: column;
+}
+
+.ListaPacientes__paciente {
+  display: flex;
+  align-items: center;
+}
+
+.ListaPacientes__avatar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #9E9E9E;
+  height: 2.25em;
+  width: 2.25em;
+  border-radius: 100%;
+  margin: 0 .75em;
+  color: white;
+  font-size: 1.15em;
+}
+
+.ListaPacientes__datos {
+  display: flex;
+  flex-direction: column;
+  padding: 1.25em .5em 1.25em 0;
+  border-bottom: 1px solid #F5F5F5;
+  flex: 1;
+}
+
+.ListaPacientes__nombre_paciente {
+  font-weight: 500;
+  margin-bottom: .35em;
+}
+
+.ListaPacientes__subitulo_paciente {
+  font-size: .7em;
+  color: #424242;
+}

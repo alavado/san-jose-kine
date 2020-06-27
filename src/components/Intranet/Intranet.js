@@ -4,7 +4,7 @@ import './Intranet.css'
 import Lateral from './Lateral'
 import { Switch, Route, useHistory, Redirect } from 'react-router'
 import Inicio from './Inicio'
-import ListaPacientes from './ListaPacientes'
+import Pacientes from './Pacientes'
 import { useDispatch, useSelector } from 'react-redux'
 import { cierraLaSesion } from '../../redux/ducks/jwt'
 
@@ -47,7 +47,7 @@ const Intranet = () => {
         <div className="Intranet__principal">
           <Switch>
             <Route path="/intranet/inicio" component={Inicio} />
-            <Route path="/intranet/pacientes" component={ListaPacientes} />
+            <Route path="/intranet/pacientes" component={Pacientes} />
           </Switch>
         </div>
       </div>
