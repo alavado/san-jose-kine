@@ -1,7 +1,8 @@
 const guardarToken = 'jwt/guardarToken'
+const limpiarToken = 'jwt/limpiarToken'
 
 const defaultState = {
-  token: ''
+  token: undefined
 }
 
 export default function reducer(state = defaultState, action = {}) {
@@ -12,6 +13,12 @@ export default function reducer(state = defaultState, action = {}) {
         token: action.payload
       }
     }
+    case limpiarToken: {
+      return {
+        ...state,
+        token: undefined
+      }
+    }
     default: {
       return state
     }
@@ -20,4 +27,8 @@ export default function reducer(state = defaultState, action = {}) {
 
 export const recibiToken = token => {
   return { type: guardarToken, payload: token }
+}
+
+export const cierraLaSesion = () => {
+  return { type: limpiarToken }
 }

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './Login.css'
 import { useHistory } from 'react-router'
 import gql from 'graphql-tag';
@@ -20,17 +20,16 @@ const mutationLogin = gql`
 const Login = () => {
 
   const history = useHistory()
-  const [login, { data }] = useMutation(mutationLogin);
+  const [login, { error }] = useMutation(mutationLogin);
+  const [variables, setVariables] = useState({
+    identifier: '',
+    password: ''
+  })
   const dispatch = useDispatch()
 
   const enviarFormulario = e => {
     e.preventDefault()
-    login({
-      variables: {
-        identifier: 'ale615',
-        password: 'asd123'
-      }
-    })
+    login({ variables })
       .then(res => {
         const token = res.data.login.jwt
         dispatch(recibiToken(token))
@@ -42,15 +41,25 @@ const Login = () => {
   return (
     <div className="Login">
       <div className="Login__contenedor">
-        <div className="Login__logo">Acceso</div>
+        <div className="Login__logo">
+          {error ? <div className="Login__error">Usuario o contraseña incorrectos</div> : 'Acceso'}
+        </div>
         <form className="Login__formulario" onSubmit={login}>
           <div className="Login__campo">
             <label>E-mail</label>
-            <input className="Login__input" type="text" />
+            <input
+              className="Login__input"
+              type="text"
+              onChange={e => setVariables({ ...variables, identifier: e.target.value})}
+            />
           </div>
           <div className="Login__campo">
             <label>Contraseña</label>
-            <input className="Login__input" type="password" />
+            <input
+              className="Login__input"
+              type="password"
+              onChange={e => setVariables({ ...variables, password: e.target.value})}
+            />
           </div>
           <div className="Login__campo">
             <button

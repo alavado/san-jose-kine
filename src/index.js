@@ -19,11 +19,13 @@ const client = new ApolloClient({
   uri: 'http://compsci.cl:1196/graphql',
   request: operation => {
     const token = getToken()
-    operation.setContext({
-      headers: token ? {
-        authorization: `Bearer ${getToken()}`
-      } : ''
-    })
+    if (token) {
+      operation.setContext({
+        headers: {
+          authorization: `Bearer ${token}`
+        }
+      })
+    }
   }
 })
 
