@@ -3,6 +3,12 @@
   min-width: 18em;
   display: flex;
   flex-direction: column;
+  position: relative;
+}
+
+.ListaPacientes__lista {
+  max-height: calc(100vh - 2em);
+  overflow: auto;
 }
 
 .ListaPacientes__paciente {

@@ -10,4 +10,5 @@
   display: flex;
   font-family: 'Montserrat', sans-serif;
   color: #212121;
+  max-height: 100vh;
 }

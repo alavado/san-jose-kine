@@ -3,7 +3,7 @@ import { InlineIcon } from '@iconify/react'
 import iconoBusqueda from '@iconify/icons-fa-solid/search'
 import './Buscador.css'
 
-const Buscador = () => {
+const Buscador = ({ setFiltro }) => {
   return (
     <div className="Buscador">
       <InlineIcon className="Buscador__icono" icon={iconoBusqueda} />
@@ -11,6 +11,10 @@ const Buscador = () => {
         type="text"
         placeholder="Buscar paciente"
         className="Buscador__input"
+        onChange={e => {
+          const busqueda = e.target.value
+          setFiltro(() => x => x.nombre.toLowerCase().includes(busqueda))
+        }}
       />
     </div>
   )

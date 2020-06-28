@@ -2,7 +2,7 @@ const guardarToken = 'jwt/guardarToken'
 const limpiarToken = 'jwt/limpiarToken'
 
 const defaultState = {
-  token: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVlZjZhMTVhODQxNWQwNjU1YmQ4YjJlMSIsImlhdCI6MTU5MzI4Mjk3NywiZXhwIjoxNTk1ODc0OTc3fQ.clIZdL-8i5mtp1QzkcovfUIn0Rl_iPkxpDT9XtILWC0'
+  token: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVlZjZhMTVhODQxNWQwNjU1YmQ4YjJlMSIsImlhdCI6MTU5MzM1ODg2MiwiZXhwIjoxNTk1OTUwODYyfQ.wGU50cFishqU0kL-uFaADl6NP6bDHm2_O5eyXnLNLOw'
 }
 
 export default function reducer(state = defaultState, action = {}) {
