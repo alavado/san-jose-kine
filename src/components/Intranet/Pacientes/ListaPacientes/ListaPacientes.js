@@ -30,7 +30,10 @@ const ListaPacientes = () => {
     <div className="ListaPacientes">
       <Buscador setFiltro={setFiltro} />
       <div className="ListaPacientes__lista">
-        {data.pacientes.filter(filtro).map(paciente => (
+        {data.pacientes
+          .filter(filtro)
+          .sort((p1, p2) => p1.nombre > p2.nombre ? 1 : -1)
+          .map(paciente => (
           <NavLink
             to={`/intranet/paciente/${paciente.id}`}
             className="ListaPacientes__paciente"

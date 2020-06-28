@@ -1,6 +1,6 @@
 .ListaPacientes {
   border-right: 1px solid #F5F5F5;
-  min-width: 18em;
+  min-width: 21em;
   display: flex;
   flex-direction: column;
   position: relative;
@@ -49,7 +49,7 @@
 
 .ListaPacientes__nombre_paciente {
   font-weight: 500;
-  font-size: .95em;
+  font-size: .9em;
   margin-bottom: .35em;
 }
 
