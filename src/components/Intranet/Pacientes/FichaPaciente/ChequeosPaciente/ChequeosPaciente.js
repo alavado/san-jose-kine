@@ -8,7 +8,7 @@ const ChequeosPaciente = ({ chequeos }) => {
     <div className="ChequeosPaciente">
       <div className="ChequeosPaciente__barra">
         <div className="ChequeosPaciente__titulo">
-          Chequeos
+          Historial
         </div>
         <button className="ChequeoPaciente__boton_nuevo_chequeo">
           <InlineIcon

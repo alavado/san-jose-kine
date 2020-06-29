@@ -3,7 +3,8 @@ import { useQuery } from '@apollo/react-hooks'
 import { gql } from 'apollo-boost'
 import './ListaPacientes.css'
 import Buscador from './Buscador'
-import { NavLink, Link } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
+import moment from 'moment'
 import Loader from '../../../Loader'
 
 const queryPacientes = gql`
@@ -11,6 +12,9 @@ const queryPacientes = gql`
     pacientes {
       id
       nombre
+      chequeos {
+        fecha
+      }
     }
   }
 `
@@ -51,7 +55,7 @@ const ListaPacientes = () => {
                 {paciente.nombre}
               </div>
               <div className="ListaPacientes__subitulo_paciente">
-                Último chequeo: pendiente
+                Último chequeo: {paciente.chequeos.length === 0 ? '-' : moment(paciente.chequeos[0].fecha).format('DD/MM/YYYY')}
               </div>
             </div>
           </NavLink>
