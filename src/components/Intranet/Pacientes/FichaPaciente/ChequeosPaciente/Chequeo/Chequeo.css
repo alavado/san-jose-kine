@@ -1,0 +1,53 @@
+.Chequeo {
+  border-left: 1px solid #E0E0E0;
+  padding-bottom: 3em;
+}
+
+.Chequeo__circulo {
+  width: 1em;
+  height: 1em;
+  border-radius: 100%;
+  background-color: #fafafa;
+  border: 2px solid #E67232;
+  margin-left: -.5em;
+  margin-right: .5em;
+}
+
+.Chequeo__encabezado {
+  display: flex;
+  font-size: .7em;
+  font-weight: 500;
+}
+
+.Chequeo__tarjeta {
+  margin: 1em 1em 0 1em;
+  background-color: white;
+  box-shadow: 0 .1em .2em rgba(0, 0, 0, .05);
+}
+
+.Chequeo__titulo {
+  padding: 1em;
+  font-weight: 600;
+  font-size: .8em;
+  text-transform: capitalize;
+  background-color: #FAFAFA;
+}
+
+.Chequeo__responsable {
+  padding: 1em;
+  font-size: .8em;
+}
+
+.Chequeo__nota {
+  padding: 1em;
+  font-size: .8em;
+}
+
+.Chequeo__link {
+  padding: 1em;
+  font-size: .8em;
+  text-transform: capitalize;
+  background-color: #FAFAFA;
+  cursor: pointer;
+  border-top: 1px solid #EEEEEE;
+}

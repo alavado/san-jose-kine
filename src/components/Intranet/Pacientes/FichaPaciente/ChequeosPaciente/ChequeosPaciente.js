@@ -2,6 +2,7 @@ import React from 'react'
 import { InlineIcon } from '@iconify/react'
 import iconoPacientes from '@iconify/icons-fa-solid/calendar-plus'
 import './ChequeosPaciente.css'
+import Chequeo from './Chequeo/Chequeo'
 
 const ChequeosPaciente = ({ chequeos }) => {
   return (
@@ -15,16 +16,15 @@ const ChequeosPaciente = ({ chequeos }) => {
             className="ChequeoPaciente__icono_nuevo_chequeo"
             icon={iconoPacientes}
           />
-          Nuevo chequeo
+          Agregar hito
         </button>
       </div>
-      {chequeos.map(chequeo => (
-        <div>
-          <div>{chequeo.fecha}</div>
-          <div>{chequeo.observacion}</div>
-          <div>{chequeo.responsable.nombre}</div>
-        </div>
-      ))}
+      <div className="ChequeosPaciente__lista">
+        {chequeos
+          .sort((c1, c2) => c1.fecha < c2.fecha ? 1 : -1)
+          .map(chequeo => <Chequeo chequeo={chequeo} />)
+        }
+      </div>
     </div>
   )
 }

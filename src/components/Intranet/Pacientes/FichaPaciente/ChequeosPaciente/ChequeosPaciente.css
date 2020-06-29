@@ -2,8 +2,20 @@
   flex: 1.5;
   padding: 2.2em;
   box-shadow: 0 .25em .25em rgba(0, 0, 0, .05);
-  background-color: #FAFAFA;
+  background-color: #F5F5F5;
   animation: ChequeosPaciente-aparece .5s .25s ease-in-out both;
+  overflow: auto;
+  max-height: 100vh;
+}
+
+.ChequeosPaciente::-webkit-scrollbar {
+  width: .5em;
+  background-color: white;
+}
+
+.ChequeosPaciente::-webkit-scrollbar-thumb{
+  border-radius: .25em;
+  background-color: #E0E0E0;
 }
 
 .ChequeosPaciente__barra {

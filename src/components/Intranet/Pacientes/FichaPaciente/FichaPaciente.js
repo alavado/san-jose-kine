@@ -22,6 +22,7 @@ const queryPaciente = gql`
         }
         fecha
         observacion
+        titulo
       }
     }
   }
