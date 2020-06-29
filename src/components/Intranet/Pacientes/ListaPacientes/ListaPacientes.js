@@ -55,7 +55,7 @@ const ListaPacientes = () => {
                 {paciente.nombre}
               </div>
               <div className="ListaPacientes__subitulo_paciente">
-                Último chequeo: {paciente.chequeos.length === 0 ? '-' : moment(paciente.chequeos[0].fecha).format('DD/MM/YYYY')}
+                Último hito: {paciente.chequeos.length === 0 ? '-' : moment(paciente.chequeos[0].fecha).format('DD/MM/YYYY')}
               </div>
             </div>
           </NavLink>

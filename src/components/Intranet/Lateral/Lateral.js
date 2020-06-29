@@ -2,7 +2,6 @@ import React from 'react'
 import './Lateral.css'
 import { NavLink } from 'react-router-dom'
 import { InlineIcon } from '@iconify/react'
-import iconoInicio from '@iconify/icons-fa-solid/home'
 import iconoPacientes from '@iconify/icons-fa-solid/user-check'
 import iconoUsuarios from '@iconify/icons-fa-solid/key'
 
