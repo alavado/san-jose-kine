@@ -2,6 +2,7 @@
   background-color: #EEEEEE;
   background-image: url("https://www.transparenttextures.com/patterns/white-paperboard.png");
   flex: 1;
+  display: flex;
 }
 
 .FichaPaciente__contenedor_loader {
@@ -9,6 +10,8 @@
   justify-content: center;
   align-items: center;
   flex: 1;
+  background-color: #EEEEEE;
+  background-image: url("https://www.transparenttextures.com/patterns/white-paperboard.png");
 }
 
 .FichaPaciente__contenedor_vacio {
@@ -17,29 +20,13 @@
   align-items: center;
   flex: 1;
   animation: FichaPaciente__contenedor_vacio-destacar 2s ease-in-out infinite both;
+  background-color: #EEEEEE;
+  background-image: url("https://www.transparenttextures.com/patterns/white-paperboard.png");
 }
 
 @keyframes FichaPaciente__contenedor_vacio-destacar {
   0% {
     opacity: .75;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-
-.FichaPaciente__contenedor_datos {
-  margin: .75em;
-  padding: 1.5em;
-  background-color: white;
-  border-radius: .25em;
-  box-shadow: 0 .25em .25em rgba(0, 0, 0, .05);
-  animation: FichaPaciente__contenedor_vacio-aparece .5s ease-in-out both;
-}
-
-@keyframes FichaPaciente__contenedor_vacio-aparece {
-  0% {
-    opacity: 0;
   }
   100% {
     opacity: 1;

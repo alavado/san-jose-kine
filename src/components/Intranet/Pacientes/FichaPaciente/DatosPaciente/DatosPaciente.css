@@ -1,0 +1,16 @@
+.DatosPaciente {
+  padding: 1.5em;
+  background-color: white;
+  border-radius: .25em;
+  box-shadow: 0 .25em .25em rgba(0, 0, 0, .05);
+  animation: DatosPaciente-aparece .5s ease-in-out both;
+}
+
+@keyframes DatosPaciente-aparece {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}

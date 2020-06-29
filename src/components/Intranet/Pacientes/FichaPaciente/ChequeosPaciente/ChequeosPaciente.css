@@ -1,0 +1,17 @@
+.ChequeosPaciente {
+  flex: 1;
+  padding: 1.5em;
+  border-radius: .25em;
+  box-shadow: 0 .25em .25em rgba(0, 0, 0, .05);
+  background-color: #EEEEEE;
+  animation: ChequeosPaciente-aparece .5s .25s ease-in-out both;
+}
+
+@keyframes ChequeosPaciente-aparece {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}

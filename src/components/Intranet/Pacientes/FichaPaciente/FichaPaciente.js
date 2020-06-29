@@ -4,6 +4,8 @@ import gql from 'graphql-tag'
 import './FichaPaciente.css'
 import { useParams } from 'react-router-dom'
 import Loader from '../../../Loader'
+import DatosPaciente from './DatosPaciente'
+import ChequeosPaciente from './ChequeosPaciente'
 
 const queryPaciente = gql`
   query Paciente($id: ID!) {
@@ -48,22 +50,8 @@ const FichaPaciente = () => {
 
   return (
     <div className="FichaPaciente">
-      <div className="FichaPaciente__contenedor_datos">
-        <div>{data.paciente.nombre}</div>
-        <div>{data.paciente.sexo}</div>
-        <div>{data.paciente.fecha_nacimiento}</div>
-        <div>{data.paciente.diagnostico}</div>
-      </div>
-      <div className="FichaPaciente__contenedor_datos">
-        <h1>Chequeos</h1>
-        {data.paciente.chequeos.map(chequeo => (
-          <div>
-            <div>{chequeo.fecha}</div>
-            <div>{chequeo.observacion}</div>
-            <div>{chequeo.responsable.nombre}</div>
-          </div>
-        ))}
-      </div>
+      <DatosPaciente paciente={data.paciente} />
+      <ChequeosPaciente chequeos={data.paciente.chequeos} />
     </div>
   )
 }
