@@ -1,9 +1,40 @@
 .DatosPaciente {
-  padding: 1.5em;
+  flex: 1;
+  padding: 2.2em;
   background-color: white;
-  border-radius: .25em;
   box-shadow: 0 .25em .25em rgba(0, 0, 0, .05);
   animation: DatosPaciente-aparece .5s ease-in-out both;
+  border-right: 1px solid #F5F5F5;
+}
+
+.DatosPaciente__titulo {
+  font-weight: 600;
+  font-size: 1.15em;
+}
+
+.DatosPaciente__subtitulo {
+  color: #616161;
+  font-size: .9em;
+  margin-top: .25em;
+  margin-bottom: 2em;
+}
+
+.DatosPaciente__dato {
+  margin-bottom: 2em;
+}
+
+.DatosPaciente__titulo_dato {
+  font-weight: 600;
+  text-transform: uppercase;
+  color: #0564D1;
+  margin-bottom: .25em;
+  font-size: .8em;
+  margin-bottom: .25em;
+}
+
+.DatosPaciente__valor_dato {
+  font-size: .95em;
+  line-height: 1.15;
 }
 
 @keyframes DatosPaciente-aparece {

@@ -1,10 +1,23 @@
 import React from 'react'
+import { InlineIcon } from '@iconify/react'
+import iconoPacientes from '@iconify/icons-fa-solid/calendar-plus'
 import './ChequeosPaciente.css'
 
 const ChequeosPaciente = ({ chequeos }) => {
   return (
     <div className="ChequeosPaciente">
-      <h1>Chequeos</h1>
+      <div className="ChequeosPaciente__barra">
+        <div className="ChequeosPaciente__titulo">
+          Chequeos
+        </div>
+        <button className="ChequeoPaciente__boton_nuevo_chequeo">
+          <InlineIcon
+            className="ChequeoPaciente__icono_nuevo_chequeo"
+            icon={iconoPacientes}
+          />
+          Nuevo chequeo
+        </button>
+      </div>
       {chequeos.map(chequeo => (
         <div>
           <div>{chequeo.fecha}</div>

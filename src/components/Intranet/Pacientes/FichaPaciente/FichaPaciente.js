@@ -14,6 +14,8 @@ const queryPaciente = gql`
       fecha_nacimiento
       sexo
       diagnostico
+      telefono
+      direccion
       chequeos {
         responsable {
           nombre
