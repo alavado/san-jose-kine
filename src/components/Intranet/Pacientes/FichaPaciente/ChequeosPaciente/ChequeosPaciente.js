@@ -1,6 +1,6 @@
 import React from 'react'
 import { InlineIcon } from '@iconify/react'
-import iconoPacientes from '@iconify/icons-fa-solid/calendar-plus'
+import iconoPacientes from '@iconify/icons-fa-solid/circle-notch'
 import './ChequeosPaciente.css'
 import Chequeo from './Chequeo/Chequeo'
 

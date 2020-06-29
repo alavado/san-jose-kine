@@ -22,7 +22,7 @@
 .Chequeo__tarjeta {
   margin: 1em 1em 0 1em;
   background-color: white;
-  box-shadow: 0 .1em .2em rgba(0, 0, 0, .05);
+  box-shadow: 0 .1em .2em rgba(0, 0, 0, .1);
 }
 
 .Chequeo__titulo {
@@ -34,8 +34,33 @@
 }
 
 .Chequeo__responsable {
-  padding: 1em;
-  font-size: .8em;
+  padding: .5em 1em;
+  display: flex;
+  align-items: center;
+}
+
+.Chequeo__avatar_responsable {
+  width: 2em;
+  height: 2em;
+  background-color: #0564D1;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 100%;
+  font-size: .7em;
+}
+
+.Chequeo__datos_responsable {
+  font-size: .65em;
+  margin-left: .75em;
+  display: flex;
+  flex-direction: column;
+}
+
+.Chequeo__nombre_responsable {
+  font-weight: 600;
+  margin-top: .25em;
 }
 
 .Chequeo__nota {
@@ -50,4 +75,9 @@
   background-color: #FAFAFA;
   cursor: pointer;
   border-top: 1px solid #EEEEEE;
+  transition: all .25s ease-in-out;
+}
+
+.Chequeo__link:hover {
+  background-color: #eeeeee;
 }

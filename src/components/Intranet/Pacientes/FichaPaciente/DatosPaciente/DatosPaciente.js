@@ -24,6 +24,10 @@ const DatosPaciente = ({ paciente }) => {
         <div className="DatosPaciente__valor_dato">{paciente.direccion}</div>
       </div>
       <div className="DatosPaciente__dato">
+        <div className="DatosPaciente__titulo_dato">Grupo</div>
+        <div className="DatosPaciente__valor_dato">Piso pélvico</div>
+      </div>
+      <div className="DatosPaciente__dato">
         <div className="DatosPaciente__titulo_dato">Diagnóstico</div>
         <div className="DatosPaciente__valor_dato">{paciente.diagnostico}</div>
       </div>

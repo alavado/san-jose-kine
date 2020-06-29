@@ -33,7 +33,7 @@ const Login = () => {
       .then(res => {
         const token = res.data.login.jwt
         dispatch(tomaEsteToken(token))
-        history.push('/intranet/inicio')
+        history.push('/intranet/pacientes')
       })
       .catch(console.error)
   }
