@@ -16,6 +16,7 @@ const queryPaciente = gql`
       diagnostico
       telefono
       direccion
+      rut
       chequeos {
         responsable {
           nombre

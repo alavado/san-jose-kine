@@ -1,6 +1,5 @@
 import React from 'react'
 import './Miniatura.css'
-import MiniaturaListaPacientes from './MiniaturaListaPacientes';
 import ChequeosPaciente from '../../Intranet/Pacientes/FichaPaciente/ChequeosPaciente';
 
 const Miniatura = () => {

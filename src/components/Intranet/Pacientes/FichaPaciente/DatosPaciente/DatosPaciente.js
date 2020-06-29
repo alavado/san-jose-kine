@@ -1,6 +1,7 @@
 import React from 'react'
 import moment from 'moment'
 import './DatosPaciente.css'
+import { formatearRUT } from '../../../../../helpers/rut'
 
 const DatosPaciente = ({ paciente }) => {
 
@@ -13,7 +14,7 @@ const DatosPaciente = ({ paciente }) => {
         {paciente.nombre}
       </div>
       <div className="DatosPaciente__subtitulo">
-        {genero}, {edad} años
+        {genero}, {edad} años, {formatearRUT(paciente.rut)}
       </div>
       <div className="DatosPaciente__dato">
         <div className="DatosPaciente__titulo_dato">Teléfono</div>

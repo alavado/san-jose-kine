@@ -12,6 +12,7 @@ const queryPacientes = gql`
     pacientes {
       id
       nombre
+      rut
       chequeos {
         fecha
       }

@@ -13,7 +13,7 @@ const Buscador = ({ setFiltro }) => {
         className="Buscador__input"
         onChange={e => {
           const busqueda = e.target.value
-          setFiltro(() => x => x.nombre.toLowerCase().includes(busqueda))
+          setFiltro(() => x => x.nombre.toLowerCase().includes(busqueda) || x.rut.includes(busqueda))
         }}
       />
     </div>
