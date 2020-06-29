@@ -5,6 +5,7 @@ import './ListaPacientes.css'
 import Buscador from './Buscador'
 import { NavLink } from 'react-router-dom'
 import moment from 'moment'
+import 'moment/locale/es'
 import Loader from '../../../Loader'
 
 const queryPacientes = gql`
@@ -34,13 +35,23 @@ const ListaPacientes = () => {
     return <p>Error :(</p>
   }
 
+  const ordenarChequeos = (paciente1, paciente2) => {
+    if (paciente1.chequeos.length === 0) {
+      return 1
+    }
+    else if (paciente2.chequeos.length === 0) {
+      return -1
+    }
+    return paciente1.chequeos[0].fecha > paciente2.chequeos[0].fecha ? -1 : 1
+  }
+
   return (
     <div className="ListaPacientes">
       <Buscador setFiltro={setFiltro} />
       <div className="ListaPacientes__lista">
         {data.pacientes
           .filter(filtro)
-          .sort((p1, p2) => p1.nombre > p2.nombre ? 1 : -1)
+          .sort(ordenarChequeos)
           .map(paciente => (
           <NavLink
             to={`/intranet/paciente/${paciente.id}`}
@@ -56,7 +67,7 @@ const ListaPacientes = () => {
                 {paciente.nombre}
               </div>
               <div className="ListaPacientes__subitulo_paciente">
-                Último hito: {paciente.chequeos.length === 0 ? '-' : moment(paciente.chequeos[0].fecha).format('DD/MM/YYYY')}
+                Último hito: {paciente.chequeos.length === 0 ? '-' : moment(paciente.chequeos[0].fecha).format('DD [de] MMMM')}
               </div>
             </div>
           </NavLink>
