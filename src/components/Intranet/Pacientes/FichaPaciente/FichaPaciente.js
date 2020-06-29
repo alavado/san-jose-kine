@@ -18,6 +18,7 @@ const queryPaciente = gql`
       direccion
       rut
       chequeos {
+        id
         responsable {
           nombre
         }
@@ -55,7 +56,7 @@ const FichaPaciente = () => {
   return (
     <div className="FichaPaciente">
       <DatosPaciente paciente={data.paciente} />
-      <ChequeosPaciente chequeos={data.paciente.chequeos} />
+      <ChequeosPaciente paciente={data.paciente} />
     </div>
   )
 }

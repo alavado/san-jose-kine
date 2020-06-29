@@ -20,7 +20,7 @@
 }
 
 .Chequeo__tarjeta {
-  margin: 1em 1em 0 1em;
+  margin: 1em 0 0 1em;
   background-color: white;
   box-shadow: 0 .1em .2em rgba(0, 0, 0, .1);
 }

@@ -1,12 +1,11 @@
 import React from 'react'
-import moment from 'moment'
 import './DatosPaciente.css'
 import { formatearRUT } from '../../../../../helpers/rut'
+import { formatearDatos } from '../../../../../helpers/demograficos'
 
 const DatosPaciente = ({ paciente }) => {
 
-  const genero = paciente.sexo === 'Masculino' ? 'Hombre' : 'Mujer'
-  const edad = moment().diff(moment(paciente.fecha_nacimiento), 'years')
+  const { genero, edad } = formatearDatos(paciente)
 
   return (
     <div className="DatosPaciente">
