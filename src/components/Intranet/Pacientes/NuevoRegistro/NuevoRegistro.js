@@ -3,7 +3,7 @@ import './NuevoRegistro.css'
 import { useSelector, useDispatch } from 'react-redux'
 import { escondeNuevoRegistro } from '../../../../redux/ducks/overlay'
 import { InlineIcon } from '@iconify/react'
-import iconoCancelar from '@iconify/icons-fa-solid/times'
+import iconoCancelar from '@iconify/icons-fa-solid/chevron-left'
 import iconoLlamada from '@iconify/icons-fa-solid/phone'
 import iconoObservacion from '@iconify/icons-fa-solid/user-edit'
 import { formatearDatos } from '../../../../helpers/demograficos'
@@ -14,23 +14,20 @@ const NuevoRegistro = () => {
   const { mostrar, paciente } = useSelector(state => state.overlay)
   const dispatch = useDispatch()
 
-  if (!mostrar) {
-    return null
-  }
   const { genero, edad } = formatearDatos(paciente)
 
   return (
-    <div className="NuevoRegistro">
+    <div className={`NuevoRegistro${mostrar ? ' NuevoRegistro--activo' : ''}`}>
       <div className="NuevoRegistro__contenedor">
         <div className="NuevoRegistro__contenedor_superior">
           <h1 className="NuevoRegistro__titulo">
             Seguimiento San José - UChile
           </h1>
           <h2 className="NuevoRegistro__paciente">
-            Paciente: {paciente.nombre}
+            {paciente && paciente.nombre}
           </h2>
           <h3 className="NuevoRegistro__subtitulo_paciente">
-            {genero}, {edad} años, {formatearRUT(paciente.rut)}
+            {genero}, {edad} años, {paciente && formatearRUT(paciente.rut)}
           </h3>
         </div>
         <button

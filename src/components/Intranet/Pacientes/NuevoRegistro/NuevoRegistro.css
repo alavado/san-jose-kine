@@ -8,16 +8,30 @@
   align-items: center;
   justify-content: center;
   overflow: hidden;
+  pointer-events: none;
+}
+
+.NuevoRegistro--activo { 
+  pointer-events: all;
 }
 
 .NuevoRegistro__contenedor {
-  background-color: white;
+  background-color: #F5F5F5;
   position: absolute;
-  animation: NuevoRegistro__contenedor-aparece .45s ease-in-out both;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  top: 1em;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: all .25s ease-out;
+}
+
+.NuevoRegistro--activo .NuevoRegistro__contenedor {
+  top: 0;
+  opacity: 1;
 }
 
 .NuevoRegistro__contenedor_superior {
@@ -33,7 +47,8 @@
 .NuevoRegistro__paciente {
   font-size: 1.5em;
   font-weight: 600;
-  margin: .5em;
+  margin-top: 1em;
+  margin-bottom: .5em;
   color: #757575;
 }
 
@@ -97,33 +112,20 @@
 
 .NuevoRegistro__boton_cancelar {
   position: absolute;
-  bottom: 1em;
-  right: 1em;
+  top: .5em;
+  left: .5em;
   cursor: pointer;
-  font-size: .75em;
+  font-size: .8em;
+  background-color: transparent;
+  display: flex;
+  align-items: center;
 }
 
 .NuevoRegistro__icono_boton_cancelar {
   margin-right: .5em;
   color: #E67232;
-}
-
-@keyframes NuevoRegistro__contenedor-aparece {
-  0% {
-    width: 10em;
-    top: 4.5em;
-    height: 2em;
-    opacity: 0;
-  }
-  50% {
-    opacity: 1;
-  }
-  100% {
-    width: 100%;
-    top: 0;
-    height: 100%;
-    opacity: 1;
-  }
+  display: flex;
+  align-items: center;
 }
 
 @keyframes NuevoRegistro__contenedor_central-aparece {

@@ -1,6 +1,5 @@
 .FichaPaciente {
   background-color: #f5f5f5;
-  background-image: url("https://www.transparenttextures.com/patterns/white-paperboard.png");
   flex: 1;
   display: flex;
 }
@@ -11,7 +10,6 @@
   align-items: center;
   flex: 1;
   background-color: #f5f5f5;
-  background-image: url("https://www.transparenttextures.com/patterns/white-paperboard.png");
 }
 
 .FichaPaciente__contenedor_vacio {
@@ -21,7 +19,6 @@
   flex: 1;
   animation: FichaPaciente__contenedor_vacio-destacar 2s ease-in-out infinite both;
   background-color: #f5f5f5;
-  background-image: url("https://www.transparenttextures.com/patterns/white-paperboard.png");
 }
 
 @keyframes FichaPaciente__contenedor_vacio-destacar {

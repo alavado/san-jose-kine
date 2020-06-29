@@ -18,8 +18,7 @@ export default function reducer(state = defaultState, action = {}) {
       else {
         return {
           ...state,
-          mostrar: false,
-          paciente: undefined
+          mostrar: false
         }
       }
     default: {

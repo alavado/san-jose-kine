@@ -43,10 +43,7 @@ const Intranet = () => {
       <Rombos desaparecen={true} />
       <div className="Intranet__barra">
         <div className="Intranet__logo">
-          <div
-            className="Intranet__logo_nombre"
-            onClick={() => history.push('/intranet/inicio')}
-          >
+          <div className="Intranet__logo_nombre">
             Seguimiento San José - UChile <span className="Intranet__nombre_centro">Administración</span>
           </div>
         </div>
