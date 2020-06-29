@@ -48,7 +48,7 @@ const ListaPacientes = () => {
                 {paciente.nombre}
               </div>
               <div className="ListaPacientes__subitulo_paciente">
-                Última llamada: 16 de mayo
+                Último chequeo: pendiente
               </div>
             </div>
           </NavLink>

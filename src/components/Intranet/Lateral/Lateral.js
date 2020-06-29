@@ -10,14 +10,14 @@ const Lateral = () => {
   return (
     <div className="Lateral">
       <div className="Lateral__links">
-        <NavLink
+        {/* <NavLink
           activeClassName="Lateral__link--activo"
           className="Lateral__link"
           to="/intranet/inicio"
         >
           <InlineIcon className="Lateral__icono_link" icon={iconoInicio} />
           <div className="Lateral__texto_link">Inicio</div>
-        </NavLink>
+        </NavLink> */}
         <NavLink
           activeClassName="Lateral__link--activo"
           className="Lateral__link"

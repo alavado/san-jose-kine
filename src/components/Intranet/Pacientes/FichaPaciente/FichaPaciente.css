@@ -1,0 +1,13 @@
+.FichaPaciente {
+  background-color: #EEEEEE;
+  background-image: url("https://www.transparenttextures.com/patterns/white-paperboard.png");
+  flex: 1;
+}
+
+.FichaPaciente__contenedor_datos {
+  margin: .75em;
+  padding: 1.5em;
+  background-color: white;
+  border-radius: .25em;
+  box-shadow: 0 .25em .25em rgba(0, 0, 0, .05);
+}

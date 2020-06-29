@@ -11,6 +11,11 @@
   overflow: auto;
 }
 
+.ListaPacientes__lista::-webkit-scrollbar {
+  width: 12px;
+  background-color: #F5F5F5;
+}
+
 .ListaPacientes__paciente {
   display: flex;
   align-items: center;
