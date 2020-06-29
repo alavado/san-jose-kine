@@ -6,14 +6,36 @@
   position: relative;
 }
 
+.ListaPacientes__cargando {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: center;
+}
+
 .ListaPacientes__lista {
   max-height: calc(100vh - 2em);
   overflow: auto;
+  animation: ListaPacientes__lista-aparece .25s ease-in-out;
+}
+
+@keyframes ListaPacientes__lista-aparece {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 .ListaPacientes__lista::-webkit-scrollbar {
-  width: 12px;
-  background-color: #F5F5F5;
+  width: .5em;
+  background-color: white;
+}
+
+.ListaPacientes__lista::-webkit-scrollbar-thumb{
+  border-radius: .25em;
+  background-color: #E0E0E0;
 }
 
 .ListaPacientes__paciente {

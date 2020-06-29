@@ -3,6 +3,7 @@ import { useQuery } from '@apollo/react-hooks'
 import gql from 'graphql-tag'
 import './FichaPaciente.css'
 import { useParams } from 'react-router-dom'
+import Loader from '../../../Loader'
 
 const queryPaciente = gql`
   query Paciente($id: ID!) {
@@ -29,8 +30,20 @@ const FichaPaciente = () => {
     variables: { id }
   })
 
+  if (!id) {
+    return (
+      <div className="FichaPaciente__contenedor_vacio">
+        Selecciona un paciente
+      </div>
+    )
+  }
+
   if (loading || !id) {
-    return null
+    return <div className="FichaPaciente__contenedor_loader"><Loader /></div>
+  }
+
+  if (error) {
+    return <div className="FichaPaciente__contenedor_loader">Error</div>
   }
 
   return (

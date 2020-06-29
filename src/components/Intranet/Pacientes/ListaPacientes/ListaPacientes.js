@@ -4,6 +4,7 @@ import { gql } from 'apollo-boost'
 import './ListaPacientes.css'
 import Buscador from './Buscador'
 import { NavLink, Link } from 'react-router-dom'
+import Loader from '../../../Loader'
 
 const queryPacientes = gql`
   {
@@ -19,7 +20,9 @@ const ListaPacientes = () => {
   const { loading, error, data } = useQuery(queryPacientes)
   const [filtro, setFiltro] = useState(() => () => true)
   
-  if (loading) return <p>Loading...</p>
+  if (loading) {
+    return <div className="ListaPacientes__cargando"><Loader /></div>
+  }
 
   if (error) {
     console.log(error)
