@@ -1,13 +1,12 @@
 import React from 'react'
-import './NuevoRegistro.css'
 import { useSelector, useDispatch } from 'react-redux'
 import { escondeNuevoRegistro } from '../../../../redux/ducks/overlay'
 import { InlineIcon } from '@iconify/react'
 import iconoCancelar from '@iconify/icons-fa-solid/chevron-left'
-import iconoLlamada from '@iconify/icons-fa-solid/phone'
-import iconoObservacion from '@iconify/icons-fa-solid/user-edit'
 import { formatearDatos } from '../../../../helpers/demograficos'
 import { formatearRUT } from '../../../../helpers/rut'
+import SeleccionTipoRegistro from './SeleccionTipoRegistro'
+import './NuevoRegistro.css'
 
 const NuevoRegistro = () => {
 
@@ -41,25 +40,7 @@ const NuevoRegistro = () => {
           Cancelar
         </button>
         <div className="NuevoRegistro__contenedor_central">
-          <p className="NuevoRegistro__instruccion">Seleccione el tipo de registro</p>
-          <div className="NuevoRegistro__contenedor-opciones">
-            <button className="NuevoRegistro__boton_opcion">
-              <div className="NuevoRegistro__icono_opcion">
-                <InlineIcon icon={iconoLlamada} />
-              </div>
-              <div className="NuevoRegistro__texto_opcion">
-                Llamada de seguimiento
-              </div> 
-            </button>
-            <button className="NuevoRegistro__boton_opcion">
-              <div className="NuevoRegistro__icono_opcion">
-                <InlineIcon icon={iconoObservacion} />
-              </div>
-              <div className="NuevoRegistro__texto_opcion">
-                Observación
-              </div> 
-            </button>
-          </div>
+          <SeleccionTipoRegistro />
         </div>
       </div>
     </div>

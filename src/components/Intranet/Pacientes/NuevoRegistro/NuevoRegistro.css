@@ -61,53 +61,6 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  animation: NuevoRegistro__contenedor_central-aparece .25s .5s ease-in-out both;
-}
-
-.NuevoRegistro__contenedor-opciones {
-  display: flex;
-  align-items: center;
-  margin-top: 1.5em;
-}
-
-.NuevoRegistro__boton_opcion {
-  width: 10em;
-  height: 10em;
-  background-color: gray;
-  border-radius: 1em;
-  color: white;
-  cursor: pointer;
-  box-shadow: 0 .1em .25em rgba(0, 0, 0, .2);
-  transition: all .25s ease-in-out;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
-.NuevoRegistro__boton_opcion:hover {
-  background-color: #E67232;
-}
-
-.NuevoRegistro__icono_opcion {
-  flex: 2;
-  font-size: 4em;
-  display: flex;
-  align-items: center;
-}
-
-.NuevoRegistro__texto_opcion {
-  flex: 1;
-  display: flex;
-  align-items: flex-start;
-}
-
-.NuevoRegistro__boton_opcion:hover {
-  box-shadow: 0 .2em .35em rgba(0, 0, 0, .25);
-}
-
-.NuevoRegistro__boton_opcion:not(:last-child) {
-  margin-right: 2em;
 }
 
 .NuevoRegistro__boton_cancelar {
@@ -126,13 +79,4 @@
   color: #E67232;
   display: flex;
   align-items: center;
-}
-
-@keyframes NuevoRegistro__contenedor_central-aparece {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
 }

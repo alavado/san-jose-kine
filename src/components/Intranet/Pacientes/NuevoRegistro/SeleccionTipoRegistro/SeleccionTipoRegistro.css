@@ -1,0 +1,51 @@
+.SeleccionTipoRegistro {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.SeleccionTipoRegistro__contenedor_opciones {
+  display: flex;
+  align-items: center;
+  margin-top: 1.5em;
+}
+
+.SeleccionTipoRegistro__boton_opcion {
+  width: 10em;
+  height: 10em;
+  background-color: gray;
+  border-radius: 1em;
+  color: white;
+  cursor: pointer;
+  box-shadow: 0 .1em .25em rgba(0, 0, 0, .2);
+  transition: all .25s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.SeleccionTipoRegistro__boton_opcion:hover {
+  background-color: #E67232;
+}
+
+.SeleccionTipoRegistro__icono_opcion {
+  flex: 2;
+  font-size: 4em;
+  display: flex;
+  align-items: center;
+}
+
+.SeleccionTipoRegistro__texto_opcion {
+  flex: 1;
+  display: flex;
+  align-items: flex-start;
+}
+
+.SeleccionTipoRegistro__boton_opcion:hover {
+  box-shadow: 0 .2em .35em rgba(0, 0, 0, .25);
+}
+
+.SeleccionTipoRegistro__boton_opcion:not(:last-child) {
+  margin-right: 2em;
+}
