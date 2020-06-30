@@ -30,7 +30,9 @@ const Chequeo = ({ chequeo }) => {
           </div>
         </div>
         <div className="Chequeo__nota">
-          {chequeo.observacion.split('\n').map(obs => <p>{obs}</p>)}
+          {chequeo.observacion.split('\n').map((obs, i) => (
+            <p key={`obs-${chequeo.id}-${i}`}>{obs}</p>
+          ))}
         </div>
         {chequeo.contenido &&
           <div className="Chequeo__link">

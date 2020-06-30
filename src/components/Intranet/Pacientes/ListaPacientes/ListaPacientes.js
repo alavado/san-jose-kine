@@ -42,7 +42,7 @@ const ListaPacientes = () => {
     else if (paciente2.chequeos.length === 0) {
       return -1
     }
-    return paciente1.chequeos[0].fecha > paciente2.chequeos[0].fecha ? -1 : 1
+    return paciente1.chequeos[0].createdAt > paciente2.chequeos[0].createdAt ? -1 : 1
   }
 
   return (
