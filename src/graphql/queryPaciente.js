@@ -15,6 +15,9 @@ export const queryPaciente = gql`
         id
         responsable {
           nombre
+          instituciones {
+            nombre
+          }
         }
         createdAt
         observacion

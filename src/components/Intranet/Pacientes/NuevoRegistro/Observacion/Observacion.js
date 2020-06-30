@@ -70,7 +70,7 @@ const Observacion = () => {
       >
         <textarea
           className="Observacion__texto"
-          placeholder={`Escribe algo sobre ${paciente.nombre}`}
+          placeholder={`Escribe algo para agregar al historial de ${paciente.nombre}.`}
           ref={textarea}
           onChange={e => setObservacion(e.target.value)}
         >
@@ -84,7 +84,7 @@ const Observacion = () => {
             className="Observacion__icono_boton_agregar"
             icon={iconoPacientes}
           />
-          Agregar registro
+          {loading ? 'Agregando...' : 'Agregar registro'}
         </button>
       </form>
     </div>
