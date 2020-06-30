@@ -24,7 +24,9 @@ const Chequeo = ({ chequeo }) => {
           </div>
           <div className="Chequeo__datos_responsable">
             <div className="Chequeo__nombre_responsable">{chequeo.responsable.nombre}</div>
-            <div className="Chequeo__titulo_responsable">{chequeo.responsable.instituciones[0].nombre}</div>
+            <div className="Chequeo__titulo_responsable">
+              {chequeo.responsable.cargo}, {chequeo.responsable.instituciones[0].nombre}
+            </div>
           </div>
         </div>
         <div className="Chequeo__nota">

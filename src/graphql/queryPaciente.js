@@ -15,6 +15,7 @@ export const queryPaciente = gql`
         id
         responsable {
           nombre
+          cargo
           instituciones {
             nombre
           }
