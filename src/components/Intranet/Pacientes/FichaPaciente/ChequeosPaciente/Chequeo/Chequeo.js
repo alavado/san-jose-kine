@@ -28,7 +28,7 @@ const Chequeo = ({ chequeo }) => {
           </div>
         </div>
         <div className="Chequeo__nota">
-          {chequeo.observacion}
+          {chequeo.observacion.split('\n').map(obs => <p>{obs}</p>)}
         </div>
         {chequeo.contenido &&
           <div className="Chequeo__link">

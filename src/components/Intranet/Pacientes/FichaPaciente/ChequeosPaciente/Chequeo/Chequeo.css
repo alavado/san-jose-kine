@@ -66,6 +66,7 @@
 .Chequeo__nota {
   padding: 1em;
   font-size: .8em;
+  line-height: 1.25;
 }
 
 .Chequeo__link {
