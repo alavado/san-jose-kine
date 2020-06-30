@@ -1,5 +1,5 @@
 import React from 'react'
-import 'LlamadaSeguimiento.css'
+import './LlamadaSeguimiento.css'
 
 const LlamadaSeguimiento = () => {
   return (

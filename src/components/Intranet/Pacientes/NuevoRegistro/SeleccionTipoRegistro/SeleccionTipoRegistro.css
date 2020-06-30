@@ -13,7 +13,7 @@
 .SeleccionTipoRegistro__boton_opcion {
   width: 10em;
   height: 10em;
-  background-color: gray;
+  background-color: #757575;
   border-radius: 1em;
   color: white;
   cursor: pointer;

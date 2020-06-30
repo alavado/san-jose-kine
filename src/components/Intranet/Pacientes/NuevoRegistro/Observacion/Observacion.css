@@ -1,0 +1,58 @@
+.Observacion {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  padding: 1.25em;
+  animation: Observacion-aparece .25s ease-in-out;
+}
+
+.Observacion__formulario {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.Observacion__texto {
+  resize: none;
+  min-width: 400px;
+  min-height: 200px;
+  border-radius: .5em;
+  border: 1px solid #eee;
+  margin: 1em 0;
+  padding: .5em;
+  outline-color: #E67232;
+}
+
+.Observacion__boton_agregar {
+  background-color: white;
+  color: #424242;
+  padding: .5em 1em;
+  font-size: .8em;
+  cursor: pointer;
+  border: 1px solid #e0e0e0;
+  display: flex;
+  align-items: center;
+  border-radius: 1.5em;
+  box-shadow: 0 0 .25em rgba(0, 0, 0, .05);
+  transition: all .25s ease-in-out;
+}
+
+.Observacion__boton_agregar:hover {
+  box-shadow: 0 .2em .25em rgba(0, 0, 0, .05);
+}
+
+.Observacion__icono_boton_agregar {
+  margin-right: .5em;
+  color: #E67232;
+}
+
+@keyframes Observacion-aparece {
+  0% {
+    opacity: 0;
+    transform: translateY(1em);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0em);
+  }
+}

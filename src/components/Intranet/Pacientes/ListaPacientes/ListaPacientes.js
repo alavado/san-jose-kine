@@ -15,7 +15,7 @@ const queryPacientes = gql`
       nombre
       rut
       chequeos {
-        fecha
+        createdAt
       }
     }
   }

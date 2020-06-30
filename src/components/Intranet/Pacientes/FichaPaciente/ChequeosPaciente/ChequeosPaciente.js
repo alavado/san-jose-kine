@@ -3,8 +3,8 @@ import { InlineIcon } from '@iconify/react'
 import iconoPacientes from '@iconify/icons-fa-solid/circle-notch'
 import Chequeo from './Chequeo/Chequeo'
 import { useDispatch } from 'react-redux'
-import './ChequeosPaciente.css'
 import { muestraNuevoRegistro } from '../../../../../redux/ducks/overlay'
+import './ChequeosPaciente.css'
 
 const ChequeosPaciente = ({ paciente }) => {
 
@@ -31,7 +31,7 @@ const ChequeosPaciente = ({ paciente }) => {
       </div>
       <div className="ChequeosPaciente__lista">
         {chequeos
-          .sort((c1, c2) => c1.fecha < c2.fecha ? 1 : -1)
+          .sort((c1, c2) => c1.createdAt < c2.createdAt ? 1 : -1)
           .map(chequeo => <Chequeo key={chequeo.id} chequeo={chequeo} />)
         }
       </div>

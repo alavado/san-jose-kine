@@ -44,7 +44,7 @@ const Intranet = () => {
       <div className="Intranet__barra">
         <div className="Intranet__logo">
           <div className="Intranet__logo_nombre">
-            Seguimiento San José - UChile <span className="Intranet__nombre_centro">Administración</span>
+            Seguimiento San José - UChile <span style={{ display: 'none' }} className="Intranet__nombre_centro">Administración</span>
           </div>
         </div>
         <div className="Intranet__barra_usuario">

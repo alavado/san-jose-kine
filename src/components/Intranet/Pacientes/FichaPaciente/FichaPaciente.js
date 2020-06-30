@@ -1,34 +1,11 @@
 import React from 'react'
 import { useQuery } from '@apollo/react-hooks'
-import gql from 'graphql-tag'
 import './FichaPaciente.css'
 import { useParams } from 'react-router-dom'
 import Loader from '../../../Loader'
 import DatosPaciente from './DatosPaciente'
 import ChequeosPaciente from './ChequeosPaciente'
-
-const queryPaciente = gql`
-  query Paciente($id: ID!) {
-    paciente(id: $id) {
-      nombre
-      fecha_nacimiento
-      sexo
-      diagnostico
-      telefono
-      direccion
-      rut
-      chequeos {
-        id
-        responsable {
-          nombre
-        }
-        fecha
-        observacion
-        titulo
-      }
-    }
-  }
-`
+import { queryPaciente } from '../../../../graphql/queryPaciente'
 
 const FichaPaciente = () => {
 

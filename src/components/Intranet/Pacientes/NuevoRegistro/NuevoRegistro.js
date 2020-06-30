@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState, useMemo, useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { escondeNuevoRegistro } from '../../../../redux/ducks/overlay'
 import { InlineIcon } from '@iconify/react'
@@ -7,13 +7,33 @@ import { formatearDatos } from '../../../../helpers/demograficos'
 import { formatearRUT } from '../../../../helpers/rut'
 import SeleccionTipoRegistro from './SeleccionTipoRegistro'
 import './NuevoRegistro.css'
+import LlamadaSeguimiento from './LlamadaSeguimiento'
+import Observacion from './Observacion'
 
 const NuevoRegistro = () => {
 
   const { mostrar, paciente } = useSelector(state => state.overlay)
+  const [tipoRegistro, setTipoRegistro] = useState(undefined)
   const dispatch = useDispatch()
 
   const { genero, edad } = formatearDatos(paciente)
+
+  useEffect(() => {
+    if (mostrar) {
+      setTipoRegistro(undefined)
+    }
+  }, [mostrar])
+
+  const componente = useMemo(() => {
+    switch (tipoRegistro) {
+      case 'llamada':
+        return <LlamadaSeguimiento />
+      case 'observacion':
+        return <Observacion seleccionarTipo={setTipoRegistro} />
+      default:
+        return <SeleccionTipoRegistro seleccionarTipo={setTipoRegistro} />
+    }
+  }, [tipoRegistro])
 
   return (
     <div className={`NuevoRegistro${mostrar ? ' NuevoRegistro--activo' : ''}`}>
@@ -40,7 +60,7 @@ const NuevoRegistro = () => {
           Cancelar
         </button>
         <div className="NuevoRegistro__contenedor_central">
-          <SeleccionTipoRegistro />
+          {componente}
         </div>
       </div>
     </div>

@@ -4,12 +4,15 @@ import iconoLlamada from '@iconify/icons-fa-solid/phone'
 import iconoObservacion from '@iconify/icons-fa-solid/user-edit'
 import './SeleccionTipoRegistro.css'
 
-const SeleccionTipoRegistro = () => {
+const SeleccionTipoRegistro = ({ seleccionarTipo }) => {
   return (
     <div className="SeleccionTipoRegistro">
       <p className="SeleccionTipoRegistro__instruccion">Seleccione el tipo de registro</p>
       <div className="SeleccionTipoRegistro__contenedor_opciones">
-        <button className="SeleccionTipoRegistro__boton_opcion">
+        <button
+          className="SeleccionTipoRegistro__boton_opcion"
+          onClick={() => seleccionarTipo('llamada')}
+        >
           <div className="SeleccionTipoRegistro__icono_opcion">
             <InlineIcon icon={iconoLlamada} />
           </div>
@@ -17,7 +20,10 @@ const SeleccionTipoRegistro = () => {
             Llamada de seguimiento
           </div>
         </button>
-        <button className="SeleccionTipoRegistro__boton_opcion">
+        <button
+          className="SeleccionTipoRegistro__boton_opcion"
+          onClick={() => seleccionarTipo('observacion')}
+        >
           <div className="SeleccionTipoRegistro__icono_opcion">
             <InlineIcon icon={iconoObservacion} />
           </div>

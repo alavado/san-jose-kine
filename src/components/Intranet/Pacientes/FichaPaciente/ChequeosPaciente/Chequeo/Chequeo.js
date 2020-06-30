@@ -11,7 +11,7 @@ const Chequeo = ({ chequeo }) => {
       <div className="Chequeo__encabezado">
         <div className="Chequeo__circulo" />
         <div className="Chequeo__fecha">
-          {moment(chequeo.fecha).format('dddd DD [de] MMMM')}
+          {moment(chequeo.createdAt).format('dddd DD [de] MMMM')}
         </div>
       </div>
       <div className="Chequeo__tarjeta">
