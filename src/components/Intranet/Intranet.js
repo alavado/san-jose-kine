@@ -1,11 +1,11 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import Rombos from '../Landing/Rombos'
 import Lateral from './Lateral'
 import { Switch, Route, useHistory, Redirect } from 'react-router'
 import Inicio from './Inicio'
 import Pacientes from './Pacientes'
 import { useDispatch, useSelector } from 'react-redux'
-import { cierraLaSesion } from '../../redux/ducks/jwt'
+import { cierraLaSesion, guardaUsuario } from '../../redux/ducks/jwt'
 import { useQuery } from '@apollo/react-hooks'
 import { decode } from 'jsonwebtoken'
 import gql from 'graphql-tag'
@@ -15,6 +15,10 @@ const queryUsuario = gql`
   query Usuario($id: ID!) {
     user(id: $id) {
       nombre
+      cargo
+      instituciones {
+        nombre
+      }
     }
   }
 `
@@ -28,6 +32,13 @@ const Intranet = () => {
   const { data } = useQuery(queryUsuario, {
     variables: { id: decode(token).id }
   })
+
+  useEffect(() => {
+    console.log(data)
+    if (data && data.user) {
+      dispatch(guardaUsuario(data.user))
+    }
+  }, [data, dispatch])
 
   // if (!token) {
   //   return <Redirect path="/login" />

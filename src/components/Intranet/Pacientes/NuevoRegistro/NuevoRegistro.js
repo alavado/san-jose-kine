@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from 'react-redux'
 import { escondeNuevoRegistro } from '../../../../redux/ducks/overlay'
 import { InlineIcon } from '@iconify/react'
 import iconoCancelar from '@iconify/icons-fa-solid/chevron-left'
+import iconoTelefono from '@iconify/icons-fa-solid/phone'
 import { formatearDatos } from '../../../../helpers/demograficos'
 import { formatearRUT } from '../../../../helpers/rut'
 import SeleccionTipoRegistro from './SeleccionTipoRegistro'
@@ -47,6 +48,9 @@ const NuevoRegistro = () => {
           </h2>
           <h3 className="NuevoRegistro__subtitulo_paciente">
             {genero}, {edad} años, {paciente && formatearRUT(paciente.rut)}
+          </h3>
+          <h3 className="NuevoRegistro__subtitulo_paciente">
+            <InlineIcon icon={iconoTelefono} /> {paciente && paciente.telefono}
           </h3>
         </div>
         <button

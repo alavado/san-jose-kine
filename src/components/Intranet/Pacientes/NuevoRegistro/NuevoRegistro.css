@@ -37,17 +37,21 @@
 .NuevoRegistro__contenedor_superior {
   position: absolute;
   top: 1em;
-  font-weight: bold;
-  color: #9E9E9E;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
+.NuevoRegistro__titulo {
+  font-weight: bold;
+  color: #9E9E9E;
+  display: none;
+}
+
 .NuevoRegistro__paciente {
   font-size: 1.5em;
   font-weight: 600;
-  margin-top: 1em;
+  margin-top: .25em;
   margin-bottom: .5em;
   color: #757575;
 }
@@ -55,6 +59,7 @@
 .NuevoRegistro__subtitulo_paciente {
   font-weight: normal;
   color: #757575;
+  margin-bottom: .75em;
 }
 
 .NuevoRegistro__contenedor_central {
