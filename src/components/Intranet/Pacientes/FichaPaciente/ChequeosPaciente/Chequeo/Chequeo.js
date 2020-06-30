@@ -11,7 +11,7 @@ const Chequeo = ({ chequeo }) => {
       <div className="Chequeo__encabezado">
         <div className="Chequeo__circulo" />
         <div className="Chequeo__fecha">
-          {moment(chequeo.createdAt).format('dddd DD [de] MMMM')}
+          {moment(chequeo.createdAt).format('dddd DD [de] MMMM [a las] HH:mm')}
         </div>
       </div>
       <div className="Chequeo__tarjeta">
@@ -30,13 +30,15 @@ const Chequeo = ({ chequeo }) => {
         <div className="Chequeo__nota">
           {chequeo.observacion}
         </div>
-        <div className="Chequeo__link">
-          <InlineIcon
-            className="ChequeoPaciente__icono_nuevo_chequeo"
-            icon={iconoPacientes}
-          />
-          Ver detalles
-        </div>
+        {chequeo.contenido &&
+          <div className="Chequeo__link">
+            <InlineIcon
+              className="ChequeoPaciente__icono_nuevo_chequeo"
+              icon={iconoPacientes}
+            />
+            Ver detalles
+          </div>
+        }
       </div>
     </div>
   )

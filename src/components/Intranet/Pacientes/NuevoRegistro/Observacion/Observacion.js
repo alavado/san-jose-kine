@@ -33,7 +33,7 @@ const Observacion = () => {
 
   const { paciente } = useSelector(state => state.overlay)
   const textarea = useRef()
-  const [mutation, { error }] = useMutation(mutationObservacion)
+  const [mutation, { loading }] = useMutation(mutationObservacion)
   const [observacion, setObservacion] = useState('')
   const { id } = useSelector(state => state.jwt)
   const dispatch = useDispatch()
@@ -52,7 +52,10 @@ const Observacion = () => {
         paciente: paciente.id,
         responsable: id
       },
-      refetchQueries: [{ query: queryPaciente, variables: { id: paciente.id } }]
+      refetchQueries: [{
+        query: queryPaciente,
+        variables: { id: paciente.id }
+      }]
     })
       .then(() => dispatch(escondeNuevoRegistro()))
       .catch(console.error)
@@ -75,6 +78,7 @@ const Observacion = () => {
         <button
           className="Observacion__boton_agregar"
           type="submit"
+          disabled={loading || observacion.length < 1}
         >
           <InlineIcon
             className="Observacion__icono_boton_agregar"
