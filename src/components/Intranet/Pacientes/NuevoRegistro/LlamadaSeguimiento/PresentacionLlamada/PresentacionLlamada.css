@@ -14,8 +14,41 @@
   font-weight: 500;
 }
 
+.LlamadaSeguimiento__sin_respuesta {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
 .PresentacionLlamada p {
   margin-bottom: .75em;
   text-align: center;
   font-size: .85em;
+}
+
+.PresentacionLlamada__contenedor_sin_respuesta {
+  position: absolute;
+  left: 1em;
+  top: 3em;
+  max-width: 20em;
+  line-height: 1.25;
+  background-color: white;
+  padding: 1em;
+  box-shadow: 0 .1em .2em rgba(0, 0, 0, .15);
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.PresentacionLlamada__contenedor_sin_respuesta p {
+  margin-bottom: .75em;
+  text-align: center;
+  font-size: .85em;
+}
+
+.PresentacionLlamada__input_contenedor_sin_respuesta {
+  border-radius: 1em;
+  border: 1px solid #8e8e8e;
+  padding: .25em 1em;
+  outline: none;
+  width: 100%;
 }

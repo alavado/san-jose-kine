@@ -3,6 +3,6 @@ export const formatearRUT = rut => {
     return `${rut.slice(0, 2)}.${rut.slice(2, 5)}.${rut.slice(5)}`
   }
   else {
-    return `${rut.slice(0, 1)}.${rut.slice(2, 5)}.${rut.slice(5)}`
+    return `${rut.slice(0, 1)}.${rut.slice(1, 4)}.${rut.slice(4)}`
   }
 }
