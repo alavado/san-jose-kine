@@ -46,9 +46,10 @@
 }
 
 .PresentacionLlamada__input_contenedor_sin_respuesta {
-  border-radius: 1em;
-  border: 1px solid #8e8e8e;
-  padding: .25em 1em;
+  border-radius: .5em;
+  border: 1px solid #BDBDBD;
+  padding: .5em 1em;
+  width: 90%;
   outline: none;
-  width: 100%;
+  text-align: center;
 }

@@ -1,0 +1,53 @@
+.Encuesta {
+  flex: 1;
+  font-size: 1em;
+  width: 100%;
+  max-width: 1240px;
+  max-height: calc(100vh - 8em);
+  background-color: white;
+  display: flex;
+  border-top: 1px solid #EEEEEE;
+  box-shadow: 0 .1em .25em rgba(0, 0, 0, .1);
+  padding-bottom: 1em;
+}
+
+.Encuesta__titulo {
+  margin-bottom: 1.5em;
+}
+
+.Encuesta__progreso {
+  flex: 1;
+  padding: 1em;
+}
+
+.Encuesta__selector_categoria {
+  cursor: pointer;
+  margin-bottom: 1em;
+}
+
+.Encuesta__selector_categoria--activa {
+  font-weight: bold;
+}
+
+.Encuesta__preguntas {
+  flex: 2;
+  overflow: auto;
+  padding: 1em;
+  line-height: 1.25;
+  font-size: .95em;
+}
+
+.Encuesta__observaciones {
+  flex: 1;
+  padding: 1em;
+}
+
+.Encuesta__textarea_observaciones {
+  resize: none;
+  width: 100%;
+  min-height: 200px;
+  border-radius: .5em;
+  border: 1px solid #eee;
+  padding: .5em;
+  outline-color: #E67232;
+}

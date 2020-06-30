@@ -1,0 +1,164 @@
+{
+  "titulo": "Encuesta",
+  "categorias": [
+    {
+      "id": "COVID-19",
+      "nombre": "COVID-19",
+      "preguntas": [
+        {
+          "id": "COVID-19-1",
+          "enunciado": "¿Usted o alguien con quien convive ha presentado tos, dolores musculares, fiebre u otros síntomas compatibles con COVID-19?",
+          "nota": "De ser afirmativo, entregar orientaciones generales.",
+          "alternativas": [
+            {
+              "id": "COVID-19-1-1",
+              "texto": "Sí"
+            },
+            {
+              "id": "COVID-19-1-2",
+              "texto": "No"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "General",
+      "nombre": "General",
+      "preguntas": [
+        {
+          "id": "General-1",
+          "enunciado": "¿Hasta qué curso llegó?",
+          "alternativas": [
+            {
+              "id": "General-1-1",
+              "texto": "Educación Básica"
+            },
+            {
+              "id": "General-1-2",
+              "texto": "Educación Media"
+            },
+            {
+              "id": "General-1-3",
+              "texto": "Educación Superior"
+            }
+          ]
+        },
+        {
+          "id": "General-2",
+          "enunciado": "¿Actualmente está trabajando?",
+          "alternativas": [
+            {
+              "id": "General-2-1",
+              "texto": "Cesante"
+            },
+            {
+              "id": "General-2-2",
+              "texto": "Contrato"
+            },
+            {
+              "id": "General-2-3",
+              "texto": "Independiente"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "EUROQL-5D",
+      "nombre": "EUROQL-5D",
+      "preguntas": [
+        {
+          "id": "EUROQL-5D-1",
+          "enunciado": "Movilidad",
+          "alternativas": [
+            {
+              "id": "EUROQL-5D-1-1",
+              "texto": "No tengo problemas para caminar"
+            },
+            {
+              "id": "EUROQL-5D-1-2",
+              "texto": "Tengo algunos problemas"
+            },
+            {
+              "id": "EUROQL-5D-1-3",
+              "texto": "Tengo que estar en la cama"
+            }
+          ]
+        },
+        {
+          "id": "EUROQL-5D-2",
+          "enunciado": "Cuidado personal",
+          "alternativas": [
+            {
+              "id": "EUROQL-5D-2-1",
+              "texto": "No tengo problemas con el cuidado personal"
+            },
+            {
+              "id": "EUROQL-5D-2-2",
+              "texto": "Tengo algunos problemas para lavarme o vestirme"
+            },
+            {
+              "id": "EUROQL-5D-2-3",
+              "texto": "Soy incapaz de lavarme o vestirme"
+            }
+          ]
+        },
+        {
+          "id": "EUROQL-5D-3",
+          "enunciado": "Cuidado personal",
+          "alternativas": [
+            {
+              "id": "EUROQL-5D-3-1",
+              "texto": "No tengo problemas para realizar mis actividades cotidianas"
+            },
+            {
+              "id": "EUROQL-5D-3-2",
+              "texto": "Tengo algunos problemas para realizar mis actividades cotidianas"
+            },
+            {
+              "id": "EUROQL-5D-3-3",
+              "texto": "Soy incapaz de realizar mis actividades cotidianas"
+            }
+          ]
+        },
+        {
+          "id": "EUROQL-5D-4",
+          "enunciado": "Dolor/malestar",
+          "alternativas": [
+            {
+              "id": "EUROQL-5D-4-1",
+              "texto": "No tengo dolor ni malestar"
+            },
+            {
+              "id": "EUROQL-5D-4-2",
+              "texto": "Tengo moderado dolor o malestar"
+            },
+            {
+              "id": "EUROQL-5D-4-3",
+              "texto": "Tengo mucho dolor o malestar"
+            }
+          ]
+        },
+        {
+          "id": "EUROQL-5D-5",
+          "enunciado": "Ansiedad/depresión",
+          "alternativas": [
+            {
+              "id": "EUROQL-5D-5-1",
+              "texto": "No estoy ansioso ni deprimido"
+            },
+            {
+              "id": "EUROQL-5D-5-2",
+              "texto": "Estoy moderadamente ansioso o deprimido"
+            },
+            {
+              "id": "EUROQL-5D-5-3",
+              "texto": "Estoy muy ansioso o deprimido"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

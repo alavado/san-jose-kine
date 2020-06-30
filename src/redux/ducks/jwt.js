@@ -27,7 +27,7 @@ export default function reducer(state = defaultState, action = {}) {
         token: undefined
       }
     }
-    case guardaUsuario: {
+    case guardarUsuario: {
       return {
         ...state,
         usuario: action.payload
@@ -48,5 +48,5 @@ export const cierraLaSesion = () => {
 }
 
 export const guardaUsuario = usuario => {
-  return { type: guardaUsuario, payload: usuario }
+  return { type: guardarUsuario, payload: usuario }
 }

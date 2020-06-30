@@ -35,11 +35,11 @@
 }
 
 .NuevoRegistro__contenedor_superior {
-  position: absolute;
-  top: 1em;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
+  height: 8em;
 }
 
 .NuevoRegistro__titulo {
@@ -51,7 +51,7 @@
 .NuevoRegistro__paciente {
   font-size: 1.5em;
   font-weight: 600;
-  margin-top: .25em;
+  margin-top: .5em;
   margin-bottom: .5em;
   color: #757575;
 }
@@ -59,13 +59,16 @@
 .NuevoRegistro__subtitulo_paciente {
   font-weight: normal;
   color: #757575;
-  margin-bottom: .75em;
+  margin-bottom: .5em;
 }
 
 .NuevoRegistro__contenedor_central {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: flex-start;
+  flex: 1;
+  width: 100%;
 }
 
 .NuevoRegistro__boton_cancelar {

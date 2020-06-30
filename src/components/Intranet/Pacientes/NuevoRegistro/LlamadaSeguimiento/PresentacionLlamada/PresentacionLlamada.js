@@ -1,16 +1,23 @@
-import React, { useState } from 'react'
+import React, { useRef, useState, useEffect } from 'react'
 import moment from 'moment'
 import { useSelector } from 'react-redux'
 import './PresentacionLlamada.css'
 
 const PresentacionLlamada = () => {
 
+  const texto = useRef()
   const [quienRespondeVisible, setQuienRespondeVisible] = useState(false)
   const { paciente } = useSelector(state => state.overlay)
   const { usuario } = useSelector(state => state.jwt)
 
   const saludo = moment().hour() < 12 ? 'Buenos días' : 'Buenas tardes'
   const esHombre = paciente.sexo === 'Masculino'
+
+  useEffect(() => {
+    if (quienRespondeVisible) {
+      texto.current.focus()
+    }
+  }, [quienRespondeVisible])
 
   return (
     <>
@@ -24,7 +31,7 @@ const PresentacionLlamada = () => {
             className="LlamadaSeguimiento__sin_respuesta"
             onClick={() => setQuienRespondeVisible(true)}
           >
-            haga click aquí si paciente no puede contestar
+            haga click aquí si {esHombre ? 'el' : 'la'} paciente no puede contestar
           </div>
         </p>
         <p>Usted tiene indicación de atención kinesiológica pendiente o en espera, dado que la
@@ -38,13 +45,14 @@ const PresentacionLlamada = () => {
         <p>Si {esHombre ? 'el' : 'la'} paciente no puede responder por
         encontrarse ocupad{esHombre ? 'o' : 'a'}, debe coordinarse un nuevo horario para realizar la llamada y cortar la
         llamada.</p>
-        <p>En caso de que {esHombre ? 'el' : 'la'} paciente no pueda responder por estado de conciencia o condición de salud, ingrese relación o
+        <p>Si {esHombre ? 'el' : 'la'} paciente no puede responder por estado de conciencia o condición de salud, ingrese relación o
         parentesco con la persona que responde, procurando que quien responda sea el familiar más
         directo posible {esHombre ? 'del' : 'de la'} paciente.</p>
         <input
           type="text"
           className="PresentacionLlamada__input_contenedor_sin_respuesta"
-          placeholder="Indique quién responde"
+          placeholder="Escriba quién responde"
+          ref={texto}
         />
       </div>}
     </>
