@@ -6,8 +6,8 @@ const limpiarToken = 'jwt/limpiarToken'
 const t = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVlZjZhMTVhODQxNWQwNjU1YmQ4YjJlMSIsImlhdCI6MTU5MzM1ODg2MiwiZXhwIjoxNTk1OTUwODYyfQ.wGU50cFishqU0kL-uFaADl6NP6bDHm2_O5eyXnLNLOw'
 
 const defaultState = {
-  token: false && window.location.href.indexOf('localhost') > 0 ? t : undefined,
-  id: false && window.location.href.indexOf('localhost') > 0 ? decode(t).id : undefined
+  token: window.location.href.indexOf('localhost') > 0 ? t : undefined,
+  id: window.location.href.indexOf('localhost') > 0 ? decode(t).id : undefined
 }
 
 export default function reducer(state = defaultState, action = {}) {

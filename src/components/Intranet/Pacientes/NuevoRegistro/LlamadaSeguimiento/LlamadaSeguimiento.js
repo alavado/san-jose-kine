@@ -3,7 +3,7 @@ import './LlamadaSeguimiento.css'
 
 const LlamadaSeguimiento = () => {
   return (
-    <div>
+    <div className="LlamadaSeguimiento">
       llamada
     </div>
   )

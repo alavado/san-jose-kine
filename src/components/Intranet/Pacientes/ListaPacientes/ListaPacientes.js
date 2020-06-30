@@ -42,7 +42,9 @@ const ListaPacientes = () => {
     else if (paciente2.chequeos.length === 0) {
       return -1
     }
-    return paciente1.chequeos[0].createdAt > paciente2.chequeos[0].createdAt ? -1 : 1
+    const ultimoChequeoP1 = paciente1.chequeos.slice(-1)[0]
+    const ultimoChequeoP2 = paciente2.chequeos.slice(-1)[0]
+    return ultimoChequeoP1.createdAt > ultimoChequeoP2.createdAt ? -1 : 1
   }
 
   return (
@@ -53,24 +55,24 @@ const ListaPacientes = () => {
           .filter(filtro)
           .sort(ordenarChequeos)
           .map(paciente => (
-          <NavLink
-            to={`/intranet/paciente/${paciente.id}`}
-            className="ListaPacientes__paciente"
-            activeClassName="ListaPacientes__paciente--activo"
-            key={paciente.id}
-          >
-            <div className="ListaPacientes__avatar">
-              {paciente.nombre[0]}
-            </div>
-            <div className="ListaPacientes__datos">
-              <div className="ListaPacientes__nombre_paciente">
-                {paciente.nombre}
+            <NavLink
+              to={`/intranet/paciente/${paciente.id}`}
+              className="ListaPacientes__paciente"
+              activeClassName="ListaPacientes__paciente--activo"
+              key={paciente.id}
+            >
+              <div className="ListaPacientes__avatar">
+                {paciente.nombre[0]}
               </div>
-              <div className="ListaPacientes__subitulo_paciente">
-                Último registro: {paciente.chequeos.length === 0 ? '-' : moment(paciente.chequeos[0].fecha).format('DD [de] MMMM')}
+              <div className="ListaPacientes__datos">
+                <div className="ListaPacientes__nombre_paciente">
+                  {paciente.nombre}
+                </div>
+                <div className="ListaPacientes__subitulo_paciente">
+                  Último registro: {paciente.chequeos.length === 0 ? '-' : moment(paciente.chequeos.slice(-1)[0].createdAt).format('DD [de] MMMM')}
+                </div>
               </div>
-            </div>
-          </NavLink>
+            </NavLink>
         ))}
       </div>
     </div>
