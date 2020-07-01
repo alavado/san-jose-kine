@@ -22,7 +22,7 @@ const LlamadaSeguimiento = () => {
               className="LlamadaSeguimiento__icono_boton_comenzar"
               icon={iconoSiguiente}
             />
-            Comenzar
+            Comenzar entrevista
           </button>
         </> :
         <Encuesta />

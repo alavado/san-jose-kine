@@ -17,7 +17,7 @@ const SeleccionTipoRegistro = ({ seleccionarTipo }) => {
             <InlineIcon icon={iconoLlamada} />
           </div>
           <div className="SeleccionTipoRegistro__texto_opcion">
-            Llamada de seguimiento
+            Seguimiento telefónico
           </div>
         </button>
         <button

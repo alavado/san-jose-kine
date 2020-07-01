@@ -40,6 +40,7 @@ const PresentacionLlamada = () => {
         <p>Sus deberes: Entregar información veraz acerca de su identidad, dirección y enfermedad. Tratar
         respetuosamente al personal de salud.</p>
         <p>Sus derechos: Trato digno, resguardo de sus datos y aceptar o rechazar esta atención."</p>
+        <p>A continuación, presione este botón:</p>
       </div>
       {quienRespondeVisible && <div className="PresentacionLlamada__contenedor_sin_respuesta">
         <p>Si {esHombre ? 'el' : 'la'} paciente no puede responder por
@@ -51,7 +52,7 @@ const PresentacionLlamada = () => {
         <input
           type="text"
           className="PresentacionLlamada__input_contenedor_sin_respuesta"
-          placeholder="Escriba quién responde"
+          placeholder="Describa quién responde"
           ref={texto}
         />
       </div>}

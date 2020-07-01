@@ -70,7 +70,7 @@ const Observacion = () => {
       >
         <textarea
           className="Observacion__texto"
-          placeholder={`Escribe algo para agregar al historial de ${paciente.nombre}.`}
+          placeholder={`Escriba algo para agregar al historial de ${paciente.nombre}.`}
           ref={textarea}
           onChange={e => setObservacion(e.target.value)}
         >

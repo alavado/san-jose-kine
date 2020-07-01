@@ -1,42 +1,100 @@
 import React, { useState } from 'react'
-import encuesta from './encuesta.json'
+import { InlineIcon } from '@iconify/react'
+import iconoFinalizar from '@iconify/icons-fa-solid/circle-notch'
+import encuestaOriginal from './encuesta.json'
 import './Encuesta.css'
 
 const Encuesta = () => {
 
   const [indiceCategoria, setIndiceCategoria] = useState(0)
+  const [encuesta, setEncuesta] = useState({
+    ...encuestaOriginal,
+    categorias: encuestaOriginal.categorias.map(categoria => ({
+      ...categoria,
+      preguntas: categoria.preguntas.map(pregunta => ({
+        ...pregunta,
+        alternativas: pregunta.alternativas.map(alternativa => ({
+          ...alternativa,
+          seleccionada: false
+        }))
+      }))
+    }))
+  })
   const categoria = encuesta.categorias[indiceCategoria]
+
+  const responderAlternativa = (indicePregunta, indiceAlternativa) => {
+    const nuevaEncuesta = { ...encuesta }
+    const alternativas = nuevaEncuesta
+      .categorias[indiceCategoria]
+      .preguntas[indicePregunta]
+      .alternativas
+    nuevaEncuesta
+      .categorias[indiceCategoria]
+      .preguntas[indicePregunta]
+      .alternativas = alternativas
+        .map((a, i) => ({ ...a, seleccionada: i === indiceAlternativa }))
+    setEncuesta(nuevaEncuesta)
+  }
 
   return (
     <div className="Encuesta">
       <div className="Encuesta__progreso">
-        <h1 className="Encuesta__titulo">Secciones</h1>
-        {encuesta.categorias.map((categoria, i) => (
-          <div
-            className={`Encuesta__selector_categoria${indiceCategoria === i ? ' Encuesta__selector_categoria--activa' : ''}`}
-            onClick={() => setIndiceCategoria(i)}
-          >
-            {categoria.nombre}
+        <div>
+          <h1 className="Encuesta__titulo">Seguimiento telefónico</h1>
+            {encuesta.categorias.map((categoria, i) => (
+              <div
+                className={`Encuesta__selector_categoria${indiceCategoria === i ? ' Encuesta__selector_categoria--activa' : ''}`}
+                onClick={() => setIndiceCategoria(i)}
+              >
+                {categoria.nombre}
+              </div>
+            ))}
           </div>
-        ))}
-        <button>Finalizar</button>
+        <button
+          className="Encuesta__boton_finalizar"
+        >
+          <InlineIcon
+            className="LlamadaSeguimiento__icono_boton_comenzar"
+            icon={iconoFinalizar}
+          />
+          Finalizar
+        </button>
       </div>
       <div className="Encuesta__preguntas">
-        <h1 className="Encuesta__titulo"></h1>
-        {categoria.preguntas.map(pregunta => (
-          <div>
-            <div>{pregunta.enunciado}</div>
-            {pregunta.alternativas.map(alternativa => (
-              <div>{alternativa.texto}</div>
+        <h1 className="Encuesta__titulo_preguntas">{categoria.nombre}</h1>
+        {categoria.preguntas.map((pregunta, i) => (
+          <div className="Encuesta__contenedor_pregunta">
+            <div className="Encuesta__enunciado_pregunta">{i + 1}. {pregunta.enunciado}</div>
+            {pregunta.alternativas.map((alternativa, j) => (
+              <div
+                className="Encuesta__alternativa"
+                key={alternativa.id}
+              >
+                <label
+                  className="Encuesta__label_alternativa"
+                  htmlFor={`label-altenativa-${i}-${j}`}
+                >
+                  <input
+                    id={`label-altenativa-${i}-${j}`}
+                    type="radio"
+                    checked={alternativa.seleccionada}
+                    onClick={() => responderAlternativa(i, j)}
+                  />
+                  {alternativa.texto}
+                </label>
+              </div>
             ))}
+            <div className="Encuesta__nota_pregunta">
+              {pregunta.nota}
+            </div>
           </div>
         ))}
       </div>
       <div className="Encuesta__observaciones">
-        <h1 className="Encuesta__titulo">Observaciones</h1>
+        <h1 className="Encuesta__titulo">Observaciones de la entrevista</h1>
         <textarea
           className="Encuesta__textarea_observaciones"
-          placeholder="La llamada transcurre de manera normal"
+          placeholder="Entrevista transcurre de manera normal."
         >
         </textarea>
       </div>

@@ -14,8 +14,9 @@
 }
 
 .ListaPacientes__lista {
-  max-height: calc(100vh - 2em);
-  overflow: auto;
+  height: calc(100vh - 2em);
+  padding-bottom: 3em;
+  overflow: scroll;
   animation: ListaPacientes__lista-aparece .25s ease-in-out;
 }
 

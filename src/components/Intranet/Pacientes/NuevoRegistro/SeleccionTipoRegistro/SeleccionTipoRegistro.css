@@ -1,13 +1,14 @@
 .SeleccionTipoRegistro {
   display: flex;
   flex-direction: column;
+  margin-top: 3em;
   align-items: center;
 }
 
 .SeleccionTipoRegistro__contenedor_opciones {
   display: flex;
   align-items: center;
-  margin-top: 1.5em;
+  margin-top: 2em;
 }
 
 .SeleccionTipoRegistro__boton_opcion {

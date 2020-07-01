@@ -3,6 +3,7 @@
   align-items: center;
   flex-direction: column;
   width: 100%;
+  flex: 1;
 }
 
 .LlamadaSeguimiento__boton_comenzar {
