@@ -7,33 +7,15 @@ import './Encuesta.css'
 const Encuesta = () => {
 
   const [indiceCategoria, setIndiceCategoria] = useState(0)
-  const [encuesta, setEncuesta] = useState({
-    ...encuestaOriginal,
-    categorias: encuestaOriginal.categorias.map(categoria => ({
-      ...categoria,
-      preguntas: categoria.preguntas.map(pregunta => ({
-        ...pregunta,
-        alternativas: pregunta.alternativas.map(alternativa => ({
-          ...alternativa,
-          seleccionada: false
-        }))
-      }))
-    }))
-  })
+  const [encuesta, setEncuesta] = useState(encuestaOriginal)
   const categoria = encuesta.categorias[indiceCategoria]
 
-  const responderAlternativa = (indicePregunta, indiceAlternativa) => {
-    const nuevaEncuesta = { ...encuesta }
-    const alternativas = nuevaEncuesta
-      .categorias[indiceCategoria]
-      .preguntas[indicePregunta]
-      .alternativas
-    nuevaEncuesta
-      .categorias[indiceCategoria]
-      .preguntas[indicePregunta]
+  const responderAlternativa = (i, j) => {
+    const alternativas = categoria.preguntas[i].alternativas
+    encuesta.categorias[indiceCategoria].preguntas[i]
       .alternativas = alternativas
-        .map((a, i) => ({ ...a, seleccionada: i === indiceAlternativa }))
-    setEncuesta(nuevaEncuesta)
+        .map((a, k) => ({ ...a, seleccionada: k === j }))
+    setEncuesta({ ...encuesta })
   }
 
   return (
@@ -91,10 +73,10 @@ const Encuesta = () => {
         ))}
       </div>
       <div className="Encuesta__observaciones">
-        <h1 className="Encuesta__titulo">Observaciones de la entrevista</h1>
+        <h1 className="Encuesta__titulo">Observaciones</h1>
         <textarea
           className="Encuesta__textarea_observaciones"
-          placeholder="Entrevista transcurre de manera normal."
+          placeholder="Sin observaciones."
         >
         </textarea>
       </div>
